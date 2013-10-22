@@ -1,0 +1,22 @@
+c:\users\lovu\documents\MIMS\MIMS\bin\Debug\MIMS.exe.config
+C:\Users\tramdo\Desktop\MIMS\MIMS\bin\Debug\MIMS.exe.config
+C:\Users\tramdo\Desktop\MIMS\MIMS\bin\Debug\MIMS.exe
+C:\Users\tramdo\Desktop\MIMS\MIMS\bin\Debug\MIMS.pdb
+C:\Users\tramdo\Desktop\MIMS\MIMS\obj\Debug\MIMS.csprojResolveAssemblyReference.cache
+C:\Users\tramdo\Desktop\MIMS\MIMS\obj\Debug\MIMS.Form1.resources
+C:\Users\tramdo\Desktop\MIMS\MIMS\obj\Debug\MIMS.Properties.Resources.resources
+C:\Users\tramdo\Desktop\MIMS\MIMS\obj\Debug\MIMS.csproj.GenerateResource.Cache
+C:\Users\tramdo\Desktop\MIMS\MIMS\obj\Debug\MIMS.exe
+C:\Users\tramdo\Desktop\MIMS\MIMS\obj\Debug\MIMS.pdb
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\bin\Debug\MIMS.exe.config
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\obj\Debug\MIMS.exe
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\obj\Debug\MIMS.pdb
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\bin\Debug\MIMS.exe
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\bin\Debug\MIMS.pdb
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\obj\Debug\MIMS.csprojResolveAssemblyReference.cache
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\obj\Debug\MIMS.Form1.resources
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\obj\Debug\MIMS.Properties.Resources.resources
+C:\Users\tramdo\Desktop\EMR Project\MIMS\MIMS\obj\Debug\MIMS.csproj.GenerateResource.Cache
+E:\MIMS\MIMS\bin\Debug\MIMS.exe.config
+E:\MIMS\MIMS\obj\Debug\MIMS.exe
+E:\MIMS\MIMS\obj\Debug\MIMS.pdb

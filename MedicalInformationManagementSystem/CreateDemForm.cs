@@ -22,7 +22,7 @@ namespace MIMS
 
        
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

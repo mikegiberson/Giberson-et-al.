@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MIMS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,13 @@ namespace HealthInformaticSystem
         
         public Form1()
         {
-            InitializeComponent();
+            //InitializeComponent();
 
             db = new Database();
+
+            //used to test Create Demographic Form
+            Application.Run(new CreateDemForm());
+            
         }
 
         private void btnSelect_Click(object sender, EventArgs e)

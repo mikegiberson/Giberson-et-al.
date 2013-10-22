@@ -1,9 +1,0 @@
-E:\Create Patient Democgraphic\Create Patient Demographic\bin\Debug\MIMS.exe.config
-E:\Create Patient Democgraphic\Create Patient Demographic\obj\Debug\MIMS.exe
-E:\Create Patient Democgraphic\Create Patient Demographic\obj\Debug\MIMS.pdb
-E:\Create Patient Democgraphic\Create Patient Demographic\bin\Debug\MIMS.exe
-E:\Create Patient Democgraphic\Create Patient Demographic\bin\Debug\MIMS.pdb
-E:\Create Patient Democgraphic\Create Patient Demographic\obj\Debug\Create Patient Democgraphic.csprojResolveAssemblyReference.cache
-E:\Create Patient Democgraphic\Create Patient Demographic\obj\Debug\MIMS.CreateDemForm.resources
-E:\Create Patient Democgraphic\Create Patient Demographic\obj\Debug\MIMS.Properties.Resources.resources
-E:\Create Patient Democgraphic\Create Patient Demographic\obj\Debug\Create Patient Democgraphic.csproj.GenerateResource.Cache

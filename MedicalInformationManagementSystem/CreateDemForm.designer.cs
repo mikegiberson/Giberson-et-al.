@@ -649,7 +649,7 @@
             this.button6.TabIndex = 21;
             this.button6.Text = "Cancel";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // CreateDemForm
             // 

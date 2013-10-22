@@ -2,6 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthInformaticSystem", "HealthInformaticSystem\HealthInformaticSystem.csproj", "{4E5B1261-C4C0-4864-8082-568395CC763C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalInformationManagementSystem", "MedicalInformationManagementSystem\MedicalInformationManagementSystem.csproj", "{4E5B1261-C4C0-4864-8082-568395CC763C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

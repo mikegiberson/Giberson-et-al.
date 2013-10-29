@@ -1,6 +1,6 @@
 ﻿namespace HealthInformaticSystem
 {
-    partial class Form1
+    partial class SearchPatient
     {
         /// <summary>
         /// Required designer variable.
@@ -30,36 +30,48 @@
         {
             this.lblResult = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.patientSearch = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(12, 38);
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.Location = new System.Drawing.Point(12, 23);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(35, 13);
+            this.lblResult.Size = new System.Drawing.Size(139, 15);
             this.lblResult.TabIndex = 0;
-            this.lblResult.Text = "label1";
+            this.lblResult.Text = "Search Patient by Id:";
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(12, 12);
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Location = new System.Drawing.Point(163, 49);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.Size = new System.Drawing.Size(109, 41);
             this.btnSelect.TabIndex = 1;
-            this.btnSelect.Text = "Select";
+            this.btnSelect.Text = "Update Patient Demography";
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // Form1
+            // patientSearch
+            // 
+            this.patientSearch.Location = new System.Drawing.Point(148, 23);
+            this.patientSearch.Name = "patientSearch";
+            this.patientSearch.Size = new System.Drawing.Size(124, 20);
+            this.patientSearch.TabIndex = 2;
+            // 
+            // SearchPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.patientSearch);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.lblResult);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "SearchPatient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SearhPatient";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.TextBox patientSearch;
     }
 }
 

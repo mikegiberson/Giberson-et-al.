@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace HealthInformaticSystem
 {
-    class Database
+    class DatabaseConnector
     {
         private SqlConnection conn;
         
-        public Database()
+        public DatabaseConnector()
         {
         }
 
@@ -25,11 +25,11 @@ namespace HealthInformaticSystem
             if (conn == null)
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "SUNNY-OMEGA"; // <-- change this to your ms sql server
-                builder.InitialCatalog = "Giberson";
+                builder.DataSource = "bang.Giberson2"; // <-- change this to your ms sql server
+                builder.InitialCatalog = "Giberson2";
                 builder.IntegratedSecurity = true;
 
-                conn = new SqlConnection(builder.ConnectionString);
+                conn = new SqlConnection("Data Source=BANG\\;Initial Catalog=Giberson2;Integrated Security=True");
             }
             return conn;
         }
@@ -45,7 +45,7 @@ namespace HealthInformaticSystem
             DataTable table = new DataTable();
             
             SqlConnection conn = getConnection();                
-            conn.Open();
+           // conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = SqlStatement;
@@ -53,8 +53,8 @@ namespace HealthInformaticSystem
             {
                 cmd.Parameters.Add(new SqlParameter(p.Key, p.Value));
             }
-            cmd.CommandType = CommandType.Text;
-            
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)
             {

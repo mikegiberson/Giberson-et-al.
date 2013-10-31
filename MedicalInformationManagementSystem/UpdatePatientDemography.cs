@@ -157,6 +157,9 @@ namespace MIMS
             cmbPhoneType.Enabled = forEdit;
             btn_update.Enabled = forEdit;
             patDob.Enabled = forEdit;
+            txtCity.Enabled = forEdit;
+            txtPostalCode.Enabled = forEdit;
+            txtProvince.Enabled = forEdit;
         }
             
     }

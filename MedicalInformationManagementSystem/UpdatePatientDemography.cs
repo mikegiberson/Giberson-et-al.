@@ -44,6 +44,9 @@ namespace MIMS
         private void btn_update_Click(object sender, EventArgs e)
         {
             dictionary = new Dictionary<string, string>();
+            
+
+
             dictionary.Add("@allergyId", dtAllergy.Rows[0][0].ToString());
             dictionary.Add("@patientId", patientId.ToString());
             dictionary.Add("@name", txtAlergyName.Text);
@@ -102,7 +105,7 @@ namespace MIMS
             dtAllergy = dc.getData("auspGetAllery", dictionary);
             dtPatientContact = dc.getData("auspGetPatientContact", dictionary);
             dtInsurance = dc.getData("auspGetInsurance", dictionary);
-
+          //  txtLname.Text = dtPatient.Rows[0]["LastName"].ToString();
             txtLname.Text = dtPatient.Rows[0][1].ToString();
             txtFname.Text = dtPatient.Rows[0][2].ToString();
             patDob.Text = dtPatient.Rows[0][3].ToString();

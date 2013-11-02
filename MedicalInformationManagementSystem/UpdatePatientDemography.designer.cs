@@ -91,9 +91,9 @@
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
             this.label1.Location = new System.Drawing.Point(299, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 29);
+            this.label1.Size = new System.Drawing.Size(348, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Create Patient Demographic";
+            this.label1.Text = "Update Patient Demographic";
             // 
             // groupBox1
             // 

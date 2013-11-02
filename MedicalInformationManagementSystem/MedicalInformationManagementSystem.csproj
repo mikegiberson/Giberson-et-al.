@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateDemForm.cs">
+    <Compile Include="UpdatePatientDemography.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateDemForm.designer.cs">
-      <DependentUpon>CreateDemForm.cs</DependentUpon>
+    <Compile Include="UpdatePatientDemography.designer.cs">
+      <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnector.cs" />
     <Compile Include="SearchPatient.cs">
@@ -63,8 +64,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateDemForm.resx">
-      <DependentUpon>CreateDemForm.cs</DependentUpon>
+    <EmbeddedResource Include="UpdatePatientDemography.resx">
+      <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchPatient.resx">
       <DependentUpon>SearchPatient.cs</DependentUpon>

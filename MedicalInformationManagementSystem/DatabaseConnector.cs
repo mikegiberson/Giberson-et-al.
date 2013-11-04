@@ -45,7 +45,6 @@ namespace HealthInformaticSystem
             DataTable table = new DataTable();
             
             SqlConnection conn = getConnection();                
-           // conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = SqlStatement;

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace HealthInformaticSystem
 {
     public partial class SearchPatient : Form
@@ -44,6 +45,28 @@ namespace HealthInformaticSystem
             }
 
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dictionary = new Dictionary<string, string>();
+            dictionary.Add("@patientId", patientSearch.Text);
+
+            dc = new DatabaseConnector();
+            dtPatient = dc.getData("CheckPatientExists", dictionary);
+
+
+            if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
+            {
+                ViewPatientEMR view = new ViewPatientEMR();
+                view.viewEMRPatientId = patientSearch.Text.ToString();
+                view.Show();
+            }
+            else
+            {
+                MessageBox.Show("Patient does not exist.");
+            }
+       
         }
     }
 }

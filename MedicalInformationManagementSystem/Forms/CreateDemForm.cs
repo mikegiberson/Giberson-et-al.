@@ -22,7 +22,7 @@ namespace MIMS
     public partial class CreateDemForm : Form
     {
 
-        private static SqlConnection myConnection = new SqlConnection("Data Source=.\\;Initial Catalog=Giberson;Integrated Security=True");
+        private static SqlConnection myConnection = new SqlConnection("Data Source=.\\SQLSERVER;Initial Catalog=Giberson;Integrated Security=True");
         DataTable dtInsurance = null;
         DataTable dtAllergy = null;
         Dictionary<String, String> dictionary = null;

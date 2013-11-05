@@ -25,11 +25,11 @@ namespace HealthInformaticSystem
             if (conn == null)
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "pr-a313-23.Giberson"; // <-- change this to your ms sql server
+                builder.DataSource = "TRAMDO-PC.Giberson"; // <-- change this to your ms sql server
                 builder.InitialCatalog = "Giberson";
                 builder.IntegratedSecurity = true;
 
-                conn = new SqlConnection("Data Source=.\\;Initial Catalog=Giberson;Integrated Security=True");
+                conn = new SqlConnection("Data Source=.\\SQLSERVER;Initial Catalog=Giberson;Integrated Security=True");
             }
             return conn;
         }

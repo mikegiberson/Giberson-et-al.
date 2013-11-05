@@ -51,6 +51,56 @@
   <ItemGroup>
     <Compile Include="Class Library\Address.cs" />
     <Compile Include="Class Library\Allergy.cs" />
+    <Compile Include="Database Connection\GibersonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database Connection\GibersonDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GibersonDataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateDemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,10 +125,31 @@
     <Compile Include="Forms\UpdatePatientDemography.designer.cs">
       <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserControlGetPatientDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserControlGetPatientDetails.designer.cs">
+      <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewPatientEMR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewPatientEMR.designer.cs">
+      <DependentUpon>ViewPatientEMR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\SearchPatient.resx">
       <DependentUpon>SearchPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdatePatientDemography.resx">
+      <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserControlGetPatientDetails.resx">
+      <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewPatientEMR.resx">
+      <DependentUpon>ViewPatientEMR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +160,116 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Database Connection\GibersonDataSet.xsc">
+      <DependentUpon>GibersonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet.xss">
+      <DependentUpon>GibersonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet1.xsc">
+      <DependentUpon>GibersonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet1.xss">
+      <DependentUpon>GibersonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet2.xsc">
+      <DependentUpon>GibersonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet2.xss">
+      <DependentUpon>GibersonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet3.xsc">
+      <DependentUpon>GibersonDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet3.xss">
+      <DependentUpon>GibersonDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet4.xsc">
+      <DependentUpon>GibersonDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet4.xss">
+      <DependentUpon>GibersonDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet5.xsc">
+      <DependentUpon>GibersonDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet5.xss">
+      <DependentUpon>GibersonDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet6.xsc">
+      <DependentUpon>GibersonDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet6.xss">
+      <DependentUpon>GibersonDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet7.xsc">
+      <DependentUpon>GibersonDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet7.xss">
+      <DependentUpon>GibersonDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet8.xsc">
+      <DependentUpon>GibersonDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet8.xss">
+      <DependentUpon>GibersonDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet9.xsc">
+      <DependentUpon>GibersonDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Database Connection\GibersonDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GibersonDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database Connection\GibersonDataSet9.xss">
+      <DependentUpon>GibersonDataSet9.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

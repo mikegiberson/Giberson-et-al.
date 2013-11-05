@@ -33,7 +33,7 @@ namespace HealthInformaticSystem
 
             if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
             {
-                CreateDemForm cd = new CreateDemForm();
+                UpdatePatientDemography cd = new UpdatePatientDemography();
                 cd.patientId = int.Parse(patientSearch.Text);
                 patientSearch.Clear();
                 cd.Show();

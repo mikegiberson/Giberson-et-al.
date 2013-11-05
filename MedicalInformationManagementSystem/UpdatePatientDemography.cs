@@ -13,7 +13,7 @@ using HealthInformaticSystem;
 
 namespace MIMS
 {
-    public partial class CreateDemForm : Form
+    public partial class UpdatePatientDemography : Form
     {
         public Boolean forEdit = false;
         public int patientId = 1;
@@ -25,7 +25,7 @@ namespace MIMS
         DatabaseConnector dc = null;
         Dictionary<String, String> dictionary = null;
 
-        public CreateDemForm()
+        public UpdatePatientDemography()
         {
             InitializeComponent();
             comboBox1.Hide();
@@ -38,7 +38,7 @@ namespace MIMS
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            CreateDemForm.ActiveForm.Hide();
+            UpdatePatientDemography.ActiveForm.Hide();
         }
 
         private void btn_update_Click(object sender, EventArgs e)

@@ -49,43 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="Allergy.cs" />
-    <Compile Include="CreateDemForm.cs">
+    <Compile Include="Class Library\Address.cs" />
+    <Compile Include="Class Library\Allergy.cs" />
+    <Compile Include="Forms\CreateDemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateDemForm.designer.cs">
+    <Compile Include="Forms\CreateDemForm.designer.cs">
       <DependentUpon>CreateDemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Email.cs" />
-    <Compile Include="GibersonDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GibersonDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Insurance.cs" />
-    <Compile Include="Patient.cs" />
-    <Compile Include="PatientAllergy.cs" />
-    <Compile Include="Phone.cs" />
-    <Compile Include="UpdatePatientDemography.cs">
+    <Compile Include="Class Library\Email.cs" />
+    <Compile Include="Class Library\Insurance.cs" />
+    <Compile Include="Class Library\Patient.cs" />
+    <Compile Include="Class Library\PatientAllergy.cs" />
+    <Compile Include="Class Library\Phone.cs" />
+    <Compile Include="Database Connection\DatabaseConnector.cs" />
+    <Compile Include="Forms\SearchPatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdatePatientDemography.designer.cs">
-      <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseConnector.cs" />
-    <Compile Include="SearchPatient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SearchPatient.Designer.cs">
+    <Compile Include="Forms\SearchPatient.designer.cs">
       <DependentUpon>SearchPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdatePatientDemography.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdatePatientDemography.designer.cs">
+      <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="UpdatePatientDemography.resx">
-      <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SearchPatient.resx">
+    <EmbeddedResource Include="Forms\SearchPatient.resx">
       <DependentUpon>SearchPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -97,17 +89,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="GibersonDataSet.xsc">
-      <DependentUpon>GibersonDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GibersonDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GibersonDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GibersonDataSet.xss">
-      <DependentUpon>GibersonDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

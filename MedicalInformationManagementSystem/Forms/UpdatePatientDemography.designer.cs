@@ -680,7 +680,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.DarkBlue;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateDemForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Patient Demographic";

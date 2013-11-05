@@ -29,7 +29,7 @@ namespace HealthInformaticSystem
             dictionary.Add("@patientId", patientSearch.Text);
 
             dc = new DatabaseConnector();
-            dtPatient = dc.getData("auspCheckPatientExists", dictionary);
+            dtPatient = dc.getData("CheckPatientExists", dictionary);
 
             if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
             {

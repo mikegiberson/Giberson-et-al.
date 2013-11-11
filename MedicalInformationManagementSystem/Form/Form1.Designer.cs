@@ -1,6 +1,6 @@
-﻿namespace HealthInformaticSystem
+﻿namespace HealthInformaticSystem.Form
 {
-    partial class ViewEMR
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // ViewEMR
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 261);
-            this.Name = "ViewEMR";
-            this.Text = "ViewEMR";
-            this.ResumeLayout(false);
-
+            this.Text = "Form1";
         }
 
         #endregion

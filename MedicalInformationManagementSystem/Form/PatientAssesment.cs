@@ -57,9 +57,6 @@ namespace HealthInformaticSystem.Forms
            DateTime dt = Convert.ToDateTime(sourceDateText);
            sourceDateText = dt.Year.ToString() +"/"+ dt.Month + "/"+ dt.Day;
            MyComboBox = sourceDateText;
-            
-          //  MyComboBox = dateVal.ToString();
-           // MessageBox.Show(MyComboBox);
             dictionary = new Dictionary<string, string>();
             dictionary.Add("@patientId", PatientAssesmentPatientId);
             

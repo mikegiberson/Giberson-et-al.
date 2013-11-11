@@ -27,7 +27,13 @@ namespace HealthInformaticSystem.Forms
 
         private void PatientAssesment_Load(object sender, EventArgs e)
         {
-           
+            label15.Text = "";
+            label16.Text = "";
+            label17.Text = "";
+            label18.Text = "";
+            label19.Text = "";
+            label20.Text = "";
+            label21.Text = "";
             dictionary = new Dictionary<string, string>();
             dictionary.Add("@patientId", PatientAssesmentPatientId);
             dc = new DatabaseConnector();

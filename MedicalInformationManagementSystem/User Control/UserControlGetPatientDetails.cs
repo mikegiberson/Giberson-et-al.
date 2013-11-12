@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     public partial class UserControlGetPatientDetails : UserControl
     {

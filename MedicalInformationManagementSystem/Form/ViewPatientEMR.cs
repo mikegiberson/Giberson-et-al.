@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HealthInformaticSystem.DataSet;
-using HealthInformaticSystem.Forms;
+using MedicalInformationManagementSystem.DataSet;
+using MedicalInformationManagementSystem.Forms;
 
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     public partial class ViewPatientEMR : Form
     {
@@ -62,7 +62,7 @@ namespace HealthInformaticSystem
        
         private void button5_Click(object sender, EventArgs e)
         {
-           HealthInformaticSystem.Forms.PatientAssesment h=new HealthInformaticSystem.Forms.PatientAssesment();
+           MedicalInformationManagementSystem.Forms.PatientAssesment h=new MedicalInformationManagementSystem.Forms.PatientAssesment();
            h.PatientAssesmentPatientId = viewEMRPatientId;
            h.Show();
           

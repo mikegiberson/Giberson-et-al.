@@ -81,6 +81,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form\Front.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Front.Designer.cs">
+      <DependentUpon>Front.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\PatientAssesment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\Front.resx">
+      <DependentUpon>Front.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\PatientAssesment.resx">
       <DependentUpon>PatientAssesment.cs</DependentUpon>
     </EmbeddedResource>

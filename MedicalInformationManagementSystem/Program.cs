@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     static class Program
     {
@@ -17,6 +17,7 @@ namespace HealthInformaticSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SearchPatient());
+            //Application.Run(new Front());
         }
     }
 }

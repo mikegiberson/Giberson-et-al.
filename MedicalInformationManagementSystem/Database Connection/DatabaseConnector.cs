@@ -25,11 +25,11 @@ namespace HealthInformaticSystem
             if (conn == null)
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "bang.Giberson2"; // <-- change this to your ms sql server
-                builder.InitialCatalog = "Giberson2";
+                builder.DataSource = "bang.Giberson"; // <-- change this to your ms sql server
+                builder.InitialCatalog = "Giberson";
                 builder.IntegratedSecurity = true;
 
-                conn = new SqlConnection("Data Source=BANG\\;Initial Catalog=Giberson2;Integrated Security=True");
+                conn = new SqlConnection("Data Source=BANG\\;Initial Catalog=Giberson;Integrated Security=True");
             }
             return conn;
         }
@@ -45,7 +45,6 @@ namespace HealthInformaticSystem
             DataTable table = new DataTable();
             
             SqlConnection conn = getConnection();                
-           // conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = SqlStatement;

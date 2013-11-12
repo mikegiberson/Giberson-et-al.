@@ -24,6 +24,7 @@ namespace HealthInformaticSystem
         {
             if (conn == null)
             {
+                // Properties (folder) > Settings.settings
                 conn = new SqlConnection(Properties.Settings.Default.GibersonConnectionString);
             }
             return conn;

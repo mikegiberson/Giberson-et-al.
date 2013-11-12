@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthInformaticSystem
+namespace HealthInformaticSystem.Form
 {
-    public partial class ViewEMR : Form
+    public partial class Form1 : Form
     {
-        public ViewEMR()
+        public Form1()
         {
             InitializeComponent();
         }

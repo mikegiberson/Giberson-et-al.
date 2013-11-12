@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 
 namespace MIMS
 {
-    public partial class CreateDemForm : Form
+    public partial class UpdatePatientDemography : Form
     {
         public Boolean forEdit = false;
         public int patientId = 1;
@@ -29,7 +29,7 @@ namespace MIMS
         DatabaseConnector dc = null;
         Dictionary<String, String> dictionary = null;
 
-        public CreateDemForm()
+        public UpdatePatientDemography()
         {
             InitializeComponent();
             enableFields();
@@ -40,7 +40,7 @@ namespace MIMS
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            CreateDemForm.ActiveForm.Hide();
+            UpdatePatientDemography.ActiveForm.Hide();
         }
         public bool IsValidDateTimeTest(string dateTime)
         {
@@ -141,6 +141,8 @@ namespace MIMS
 
         private void CreateDemForm_Load(object sender, EventArgs e)
         {
+           
+            
             dictionary = new Dictionary<string, string>();
             dictionary.Add("@patientId", patientId.ToString());
             
@@ -167,6 +169,7 @@ namespace MIMS
 
             txtInsNum.Text = dtInsurance.Rows[0][2].ToString();
             txtInsVersion.Text = dtInsurance.Rows[0][3].ToString();
+
             txtExpDate.Text = dtInsurance.Rows[0][4].ToString();  
           
 

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     class DatabaseConnector
     {
@@ -24,18 +24,14 @@ namespace HealthInformaticSystem
         {
             if (conn == null)
             {
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "bang.Giberson"; // <-- change this to your ms sql server
-                builder.InitialCatalog = "Giberson";
-                builder.IntegratedSecurity = true;
-
-                conn = new SqlConnection("Data Source=BANG\\;Initial Catalog=Giberson;Integrated Security=True");
+                // Properties (folder) > Settings.settings
+                conn = new SqlConnection(Properties.Settings.Default.GibersonConnectionString);
             }
             return conn;
         }
 
         /// <summary>
-        /// 
+        /// Redundant?
         /// </summary>
         /// <param name="SqlStatement">sql statement</param>
         /// <param name="parameters">dictionary with the "@key" and it "values"</param>

@@ -1,4 +1,4 @@
-﻿namespace HealthInformaticSystem.Forms
+﻿namespace MedicalInformationManagementSystem.Forms
 {
     partial class PatientAssesment
     {
@@ -57,9 +57,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbEMRDates = new System.Windows.Forms.ComboBox();
-            this.dataSetGetEMRDatesIntoComboBox = new HealthInformaticSystem.DataSetGetEMRDatesIntoComboBox();
+            this.dataSetGetEMRDatesIntoComboBox = new MedicalInformationManagementSystem.DataSetGetEMRDatesIntoComboBox();
             this.getPatientEMRDatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getPatientEMRDatesTableAdapter = new HealthInformaticSystem.DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter();
+            this.getPatientEMRDatesTableAdapter = new MedicalInformationManagementSystem.DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();

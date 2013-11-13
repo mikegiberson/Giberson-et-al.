@@ -1,4 +1,4 @@
-﻿namespace HealthInformaticSystem.DataSet {
+﻿namespace MedicalInformationManagementSystem.DataSet {
     
     
     public partial class DataSetViewPatientRadiology {

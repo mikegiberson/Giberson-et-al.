@@ -7,57 +7,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalInformationManagementSystem.Class;
 
 namespace MedicalInformationManagementSystem
 {
     public partial class Login : Form
     {
-        private List<string> Roles = new List<string>();
+        private Front Front;
+        private Encrypt Encryption = new Encrypt();
+
+        private DatabaseConnector dc;
+        private Dictionary<String, String> dictionary;
         
-        public Login()
+        private DataTable dtEmployee;
+        
+        public Login(Front f)
         {
+            Front = f;
             InitializeComponent();
-
-            Roles.Add("Medical Staff");
-            Roles.Add("Adminstrative Staff");
-            Roles.Add("Manager");
-
-            foreach (String r in Roles)
-            {
-                cmbRole.Items.Add(r);
-            }
-            cmbRole.SelectedIndex = 0;
-        }
-
-        private String encrypt(String password)
-        {
-            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
-            data = x.ComputeHash(data);
-            return System.Text.Encoding.ASCII.GetString(data);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String username = txtUserName.Text;
-            String password = encrypt(txtPassword.Text);
-            String role = cmbRole.SelectedItem.ToString();
+            String password = Encryption.MD5(txtPassword.Text);
 
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(role))
             {
-                foreach (String r in Roles)
+                dictionary = new Dictionary<string, string>();
+                dictionary.Add("@userName", username);
+
+                dc = new DatabaseConnector();
+                dtEmployee = dc.getData("ReadEmployeeByName", dictionary);
+
+                if (dtEmployee.Rows.Count == 1)
                 {
-                    if (String.Equals(r, role))
-                    {
-                        MessageBox.Show(username + " " + password + " " + role);
-                    }
+                    verifyEmployee(username, password);
+                }
+                else
+                {
+                    MessageBox.Show("Multiple user with same userName");
                 }
             }
             else
             {
-                MessageBox.Show("Invalid Login");
+                MessageBox.Show("Some field(s) were left blank.");
             }
+        }
 
+        public void verifyEmployee(String username, String password)
+        {
+            if (String.Equals(dtEmployee.Rows[0]["password"].ToString(), password))
+            {
+                Front.employeeID = int.Parse(dtEmployee.Rows[0]["employeeID"].ToString());
+                Front.userName = dtEmployee.Rows[0]["password"].ToString();
+                Front.role = dtEmployee.Rows[0]["role"].ToString();
+                Front.CloseLogin();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Password");
+            }
         }
     }
 }

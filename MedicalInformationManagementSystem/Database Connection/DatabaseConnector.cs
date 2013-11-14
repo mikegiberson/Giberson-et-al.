@@ -31,12 +31,12 @@ namespace MedicalInformationManagementSystem
         }
 
         /// <summary>
-        /// Redundant?
+        /// 
         /// </summary>
         /// <param name="SqlStatement">sql statement</param>
         /// <param name="parameters">dictionary with the "@key" and it "values"</param>
         /// <returns>sql result in datatable format</returns>
-        public DataTable getData(string SqlStatement, Dictionary<String, String> parameters)
+        public DataTable getData(string SqlStatement, Dictionary<String, String> parameters) // <===
         {
             DataTable table = new DataTable();
             
@@ -48,7 +48,8 @@ namespace MedicalInformationManagementSystem
             {
                 cmd.Parameters.Add(new SqlParameter(p.Key, p.Value));
             }
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure; // <===
+            // We need another parameter (so it can handle procedures and regular statements
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.HasRows)

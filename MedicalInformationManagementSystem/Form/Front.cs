@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace MedicalInformationManagementSystem
 {
+
     public partial class Front : Form
     {
         private Login login;
-        
+
+        public int employeeID;
+        public string userName;
+        public string role;
+
         public Front()
         {
             InitializeComponent();
-            login = new Login();
+            login = new Login(this);
             login.MdiParent = this;
             login.Show();
         }
@@ -30,10 +35,17 @@ namespace MedicalInformationManagementSystem
             }
             else
             {
-                login = new Login();
+                login = new Login(this);
                 login.MdiParent = this;
                 login.Show();
             }
+        }
+
+        public void CloseLogin()
+        {
+            login.Hide();
+            login.Close();
+            //
         }
     }
 }

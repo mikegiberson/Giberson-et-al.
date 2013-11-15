@@ -7,8 +7,8 @@
     <ProjectGuid>{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HealthInformaticSystem</RootNamespace>
-    <AssemblyName>HealthInformaticSystem</AssemblyName>
+    <RootNamespace>MedicalInformationManagementSystem</RootNamespace>
+    <AssemblyName>MIMS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -156,6 +156,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DataSetGetEMRDatesIntoComboBox.xsc">
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>

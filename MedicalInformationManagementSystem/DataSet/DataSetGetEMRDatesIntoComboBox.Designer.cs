@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace MedicalInformationManagementSystem {
+namespace MedicalInformationManagementSystem.DataSet {
     
     
     /// <summary>
@@ -581,7 +581,7 @@ namespace MedicalInformationManagementSystem {
         }
     }
 }
-namespace MedicalInformationManagementSystem.DataSetGetEMRDatesIntoComboBoxTableAdapters {
+namespace MedicalInformationManagementSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters {
     
     
     /// <summary>

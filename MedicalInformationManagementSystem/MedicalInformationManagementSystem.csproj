@@ -52,7 +52,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Address.cs" />
+    <Compile Include="Class\Allergy.cs" />
+    <Compile Include="Class\Doctor.cs" />
+    <Compile Include="Class\Email.cs" />
     <Compile Include="Class\Encrypt.cs" />
+    <Compile Include="Class\Insurance.cs" />
+    <Compile Include="Class\Patient.cs" />
+    <Compile Include="Class\PatientAllergy.cs" />
+    <Compile Include="Class\Phone.cs" />
+    <Compile Include="Class\ReferralDoctor.cs" />
     <Compile Include="DataSetGetEMRDatesIntoComboBox.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form\CreateDemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CreateDemForm.designer.cs">
+      <DependentUpon>CreateDemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Front.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +114,12 @@
     </Compile>
     <Compile Include="Form\PatientAssesment.Designer.cs">
       <DependentUpon>PatientAssesment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ViewDemography.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ViewDemography.designer.cs">
+      <DependentUpon>ViewDemography.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\UserControlGetPatientDetails.cs">
       <SubType>UserControl</SubType>
@@ -127,6 +148,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\CreateDemForm.resx">
+      <DependentUpon>CreateDemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Front.resx">
       <DependentUpon>Front.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PatientAssesment.resx">
       <DependentUpon>PatientAssesment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ViewDemography.resx">
+      <DependentUpon>ViewDemography.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\UserControlGetPatientDetails.resx">
       <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>

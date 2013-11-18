@@ -62,7 +62,7 @@
     <Compile Include="Class\PatientAllergy.cs" />
     <Compile Include="Class\Phone.cs" />
     <Compile Include="Class\ReferralDoctor.cs" />
-    <Compile Include="DataSetGetEMRDatesIntoComboBox.Designer.cs">
+    <Compile Include="DataSet\DataSetGetEMRDatesIntoComboBox.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
@@ -121,12 +121,6 @@
     <Compile Include="Form\ViewDemography.designer.cs">
       <DependentUpon>ViewDemography.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\UserControlGetPatientDetails.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control\UserControlGetPatientDetails.Designer.cs">
-      <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\ViewPatientEMR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,9 +157,6 @@
     <EmbeddedResource Include="Form\ViewDemography.resx">
       <DependentUpon>ViewDemography.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\UserControlGetPatientDetails.resx">
-      <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\ViewPatientEMR.resx">
       <DependentUpon>ViewPatientEMR.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,15 +176,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataSetGetEMRDatesIntoComboBox.xsc">
+    <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xsc">
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
     </None>
-    <None Include="DataSetGetEMRDatesIntoComboBox.xsd">
+    <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetGetEMRDatesIntoComboBox.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSetGetEMRDatesIntoComboBox.xss">
+    <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xss">
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetViewPatientDiagnosis.xsc">

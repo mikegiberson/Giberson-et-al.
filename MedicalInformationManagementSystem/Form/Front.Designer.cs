@@ -42,6 +42,7 @@
             this.mnuNav.Size = new System.Drawing.Size(680, 24);
             this.mnuNav.TabIndex = 1;
             this.mnuNav.Text = "Navigation";
+            this.mnuNav.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuNav_ItemClicked);
             // 
             // loginToolStripMenuItem
             // 
@@ -50,7 +51,7 @@
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
-            // Interface
+            // Front
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -58,7 +59,7 @@
             this.Controls.Add(this.mnuNav);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuNav;
-            this.Name = "Interface";
+            this.Name = "Front";
             this.Text = "Medical Information Management System";
             this.mnuNav.ResumeLayout(false);
             this.mnuNav.PerformLayout();

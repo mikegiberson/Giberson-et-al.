@@ -91,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form\DoctorSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DoctorSchedule.Designer.cs">
+      <DependentUpon>DoctorSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\CreateDemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\CreateDemForm.resx">
       <DependentUpon>CreateDemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\DoctorSchedule.resx">
+      <DependentUpon>DoctorSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Front.resx">
       <DependentUpon>Front.cs</DependentUpon>

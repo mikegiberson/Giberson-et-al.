@@ -1055,18 +1055,7 @@ namespace MedicalInformationManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn3;
         //private DataSetViewPatientDiagnosis dataSetViewPatientDiagnosis;
         //private MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.DataSet.GetPatientRadiologyTableAdapter getPatientRadiologyTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientIDDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorIDDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn radiologyID1DataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientIDDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorIDDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timestampDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diagnosisIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diagnosisID1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn4;
-        private MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosis dataSetViewPatientDiagnosis;
-        private MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.GetPatientDiagnosisTableAdapter getPatientDiagnosisTableAdapter;
+
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn timestampDataGridViewTextBoxColumn5;

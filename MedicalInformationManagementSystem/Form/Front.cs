@@ -46,7 +46,8 @@ namespace MedicalInformationManagementSystem
             login.Hide();
             login.Close();
             
-            mnuNav.Items.Clear();
+            //mnuNav.Items.Clear();
+            loginToolStripMenuItem.Visible = false;
 
             if (role == "Administrator")
             {

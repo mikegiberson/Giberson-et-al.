@@ -32,7 +32,7 @@ namespace MedicalInformationManagementSystem
             String username = txtUserName.Text;
             String password = Encryption.MD5(txtPassword.Text);
 
-            if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(role))
+            if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(txtPassword.Text))
             {
                 dictionary = new Dictionary<string, string>();
                 dictionary.Add("@userName", username);

@@ -45,7 +45,38 @@ namespace MedicalInformationManagementSystem
         {
             login.Hide();
             login.Close();
-            //
+            
+            mnuNav.Items.Clear();
+
+            if (role == "Administrator")
+            {
+                var manageStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                {
+                    Text = "Manage Staff"
+                };
+                mnuNav.Items.Add(manageStaffToolStripMenuItem);
+            }
+            else if (role == "Medical Staff")
+            {
+                var doctorScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                {
+                    Text = "Doctor Schedule"
+                };
+                mnuNav.Items.Add(doctorScheduleToolStripMenuItem);
+            }
+            else
+            {
+                var schedulingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
+                {
+                    Text = "Scheduling"
+                };
+                mnuNav.Items.Add(schedulingToolStripMenuItem);
+            }
+        }
+
+        private void mnuNav_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

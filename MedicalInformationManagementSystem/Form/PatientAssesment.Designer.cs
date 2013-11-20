@@ -1,4 +1,7 @@
-﻿namespace MedicalInformationManagementSystem.Forms
+﻿using MedicalInformationManagementSystem.DataSet;
+using MedicalInformationManagementSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters;
+
+namespace MedicalInformationManagementSystem.Forms
 {
     partial class PatientAssesment
     {
@@ -57,9 +60,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbEMRDates = new System.Windows.Forms.ComboBox();
-            this.dataSetGetEMRDatesIntoComboBox = new MedicalInformationManagementSystem.DataSetGetEMRDatesIntoComboBox();
+            this.dataSetGetEMRDatesIntoComboBox = new DataSetGetEMRDatesIntoComboBox();
             this.getPatientEMRDatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getPatientEMRDatesTableAdapter = new MedicalInformationManagementSystem.DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter();
+            this.getPatientEMRDatesTableAdapter = new GetPatientEMRDatesTableAdapter();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -546,7 +549,7 @@
         private System.Windows.Forms.ComboBox cmbEMRDates;
         private System.Windows.Forms.BindingSource getPatientEMRDatesBindingSource;
         private DataSetGetEMRDatesIntoComboBox dataSetGetEMRDatesIntoComboBox;
-        private DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter getPatientEMRDatesTableAdapter;
+        private GetPatientEMRDatesTableAdapter getPatientEMRDatesTableAdapter;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;

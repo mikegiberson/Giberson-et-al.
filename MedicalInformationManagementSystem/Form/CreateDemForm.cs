@@ -19,14 +19,13 @@ using MedicalInformationManagementSystem;
 
 
 
-
 namespace MIMS
 {
     public partial class CreateDemForm : Form
     {
-      
-             
-        private static SqlConnection myConnection = new SqlConnection("Data Source=.\\SQLSERVER;Initial Catalog=Giberson;Integrated Security=True");
+
+
+        private static SqlConnection myConnection = new SqlConnection(MedicalInformationManagementSystem.Properties.Settings.Default.GibersonConnectionString);
         DataTable dtInsurance = null;
         DataTable dtAllergy = null;
         DataTable dtDoctor = null;
@@ -41,9 +40,7 @@ namespace MIMS
            
             cmbxGender.Text = "Male";
             cmbxInsuranceType.Text = "OHIP";
-            cmbxPhoneType.Text = "Home";
-            cmbxAddressType.Text = "Mailing";
-            cmbxEmailType.Text = "Business";
+            
 
             txtDOB.MaxLength=10;
             txtInsuranceNumber.MaxLength = 10;
@@ -457,6 +454,13 @@ namespace MIMS
                   if (txtEmail.Text != "")
                   insertEmail(email);
 
+                  if (txtReferralDoctor.Text != "")
+                  {
+                      refDoctor.patientID = patient.patientID;
+                      refDoctor.doctorID = getDoctorIdfromDoctorTbl1();
+                      insertReferralDoctor(refDoctor);
+                  }
+
                /*   if (txtDoctorBillingCode.Text != "" && txtReferralDoctor.Text != "")
                   {
 
@@ -479,6 +483,7 @@ namespace MIMS
                 
 
                     clearText();
+                    MessageBox.Show("Patient was registed");
                     DialogResult result = MessageBox.Show("Go to patient demography?", "Patient registed", MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Question);
 

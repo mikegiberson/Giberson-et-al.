@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthInformaticSystem.Class_Library
+namespace MedicalInformationManagementSystem.Class
 {
     class Doctor
     {

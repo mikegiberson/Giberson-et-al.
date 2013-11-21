@@ -9,21 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
-
-using HealthInformaticSystem;
 using System.Globalization;
-using HealthInformaticSystem.Class_Library;
-using MedicalInformationManagementSystem;
 
+using MedicalInformationManagementSystem.Class;
 
-
-
-
-namespace MIMS
+namespace MedicalInformationManagementSystem
 {
     public partial class CreateDemForm : Form
     {
-
 
         private static SqlConnection myConnection = new SqlConnection(MedicalInformationManagementSystem.Properties.Settings.Default.GibersonConnectionString);
         DataTable dtInsurance = null;

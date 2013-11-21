@@ -1,5 +1,4 @@
-﻿using MIMS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +13,8 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 using System.IO;
-using MedicalInformationManagementSystem;
 
-
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     public partial class SearchPatient : Form
     {

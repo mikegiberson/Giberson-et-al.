@@ -178,6 +178,8 @@
     <Compile Include="Form\ManageStaff.Designer.cs">
       <DependentUpon>ManageStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\CreateDemForm.resx">
       <DependentUpon>CreateDemForm.cs</DependentUpon>
     </EmbeddedResource>

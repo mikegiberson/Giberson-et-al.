@@ -62,7 +62,7 @@ namespace MedicalInformationManagementSystem
                 Front.employeeID = int.Parse(dtEmployee.Rows[0]["employeeID"].ToString());
                 Front.userName = dtEmployee.Rows[0]["password"].ToString();
                 Front.role = dtEmployee.Rows[0]["role"].ToString();
-                Front.CloseLogin();
+                Front.Login();
             }
             else
             {

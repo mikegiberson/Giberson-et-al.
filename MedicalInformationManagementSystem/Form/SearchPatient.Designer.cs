@@ -1,4 +1,4 @@
-﻿namespace MedicalInformationManagementSystem
+﻿namespace HealthInformaticSystem
 {
     partial class SearchPatient
     {
@@ -47,11 +47,11 @@
             // btnSelect
             // 
             this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.Location = new System.Drawing.Point(148, 49);
+            this.btnSelect.Location = new System.Drawing.Point(148, 63);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(112, 57);
             this.btnSelect.TabIndex = 1;
-            this.btnSelect.Text = "Update Patient Demography";
+            this.btnSelect.Text = "View Patient Demography";
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 481);
+            this.ClientSize = new System.Drawing.Size(386, 289);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.patientSearch);
             this.Controls.Add(this.btnSelect);

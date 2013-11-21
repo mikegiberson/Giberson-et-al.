@@ -10,8 +10,11 @@ using System.Windows.Forms;
 using MedicalInformationManagementSystem.DataSet;
 using MedicalInformationManagementSystem.Forms;
 
+using MedicalInformationManagementSystem;
+using HealthInformaticSystem.Reports;
 
-namespace MedicalInformationManagementSystem
+
+namespace HealthInformaticSystem
 {
     public partial class ViewPatientEMR : Form
     {
@@ -30,12 +33,7 @@ namespace MedicalInformationManagementSystem
 
         private void ViewPatientEMR_Load(object sender, EventArgs e)
         {
-            //userControlGetPatientDetails1.mygetPatientId(viewEMRPatientId);
-            // TODO: This line of code loads data into the 'gibersonDataSet2.GetAllAllergies' table. You can move, or remove it, as needed.
-            //this.getAllAllergiesTableAdapter.Fill(this.gibersonDataSet2.GetAllAllergies);
-            // TODO: This line of code loads data into the 'gibersonDataSet.Patient' table. You can move, or remove it, as needed.
-            //UserControlGetPatientDetails userControl = new UserControlGetPatientDetails();
-            //userControl.usercontrolPatientId=viewEMRPatientId;
+           
             rdId.Hide();
             rdName.Hide();
             rdTime.Hide();
@@ -62,7 +60,7 @@ namespace MedicalInformationManagementSystem
        
         private void button5_Click(object sender, EventArgs e)
         {
-           MedicalInformationManagementSystem.Forms.PatientAssesment h=new MedicalInformationManagementSystem.Forms.PatientAssesment();
+            MedicalInformationManagementSystem.Forms.PatientAssesment h = new MedicalInformationManagementSystem.Forms.PatientAssesment();
            h.PatientAssesmentPatientId = viewEMRPatientId;
            h.Show();
           
@@ -142,6 +140,18 @@ namespace MedicalInformationManagementSystem
             assesment.PatientAssesmentPatientId = viewEMRPatientId;
             assesment.patid = patId;
             assesment.Show();
+        }
+
+        private void getPatientRadiologyBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            EmrReport repo = new EmrReport();
+            repo.patientId = patId;
+            repo.Show();
         }
 
        

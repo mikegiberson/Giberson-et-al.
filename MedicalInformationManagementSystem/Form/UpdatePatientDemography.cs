@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using MedicalInformationManagementSystem;
+using HealthInformaticSystem;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using MedicalInformationManagementSystem;
 
 
 namespace MIMS
@@ -18,7 +19,7 @@ namespace MIMS
     public partial class UpdatePatientDemography : Form
     {
         public Boolean forEdit = false;
-        public int patientId = 1;
+        public int patientId;
         DataTable dtPatient = null;
         DataTable dtReferenceDoctor = null;
         DataTable dtAllergy = null;
@@ -41,6 +42,10 @@ namespace MIMS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             UpdatePatientDemography.ActiveForm.Hide();
+            //ViewDemography view = new ViewDemography();
+            //view.patientId = this.patientId;
+
+            //view.Show();
         }
         public bool IsValidDateTimeTest(string dateTime)
         {
@@ -65,11 +70,11 @@ namespace MIMS
             }
                   else if(txtInsNum.Text.Length!=10)
              {
-                 MessageBox.Show("Enter 10 digit Insurance no.");
+                 MessageBox.Show("Enter 10 digits Insurance no.");
              }
              else if(txtInsVersion.Text.Length!=2)
              {
-                 MessageBox.Show("Enter 2 digit Insurance Version no.");
+                 MessageBox.Show("Enter 2 characters Insurance Version no.");
              }
            
             //MessageBox.Show(" "+dob);
@@ -135,6 +140,7 @@ namespace MIMS
                 BtnEditDemo.Show();
                 enableFields();
                 btn_update.Hide();
+                
             }
             
         }
@@ -158,10 +164,14 @@ namespace MIMS
         
             txtLname.Text = dtPatient.Rows[0][2].ToString();
             txtFname.Text = dtPatient.Rows[0][3].ToString();
-            patDob.Text = dtPatient.Rows[0][4].ToString();
+            string sourceDateTex = dtPatient.Rows[0][4].ToString();
+            DateTime dt = Convert.ToDateTime(sourceDateTex);
+            sourceDateTex = dt.Year.ToString() + "-" + dt.Month + "-" + dt.Day;
+            patDob.Text = sourceDateTex;
+            
             cmbGender.Text = dtPatient.Rows[0][5].ToString();
 
-            txtRefDoctor.Text = dtReferenceDoctor.Rows[0][0].ToString();
+            txtRefDoctor.Text = dtReferenceDoctor.Rows[0][2].ToString();
             txtBillingCode.Text = dtReferenceDoctor.Rows[0][1].ToString();
 
             txtAlergyName.Text = dtAllergy.Rows[0][1].ToString();
@@ -170,7 +180,10 @@ namespace MIMS
             txtInsNum.Text = dtInsurance.Rows[0][2].ToString();
             txtInsVersion.Text = dtInsurance.Rows[0][3].ToString();
 
-            txtExpDate.Text = dtInsurance.Rows[0][4].ToString();  
+            string sourceDateText = dtInsurance.Rows[0][4].ToString();
+            DateTime dte = Convert.ToDateTime(sourceDateText);
+            sourceDateText = dte.Year.ToString() + "-" + dte.Month + "-" + dte.Day;
+            txtExpDate.Text = sourceDateText; 
           
 
             cmbAddType.Text=dtPatientAddress.Rows[0][2].ToString();

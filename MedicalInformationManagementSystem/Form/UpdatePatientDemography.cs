@@ -8,13 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using HealthInformaticSystem;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using MedicalInformationManagementSystem;
 
-
-namespace MIMS
+namespace MedicalInformationManagementSystem
 {
     public partial class UpdatePatientDemography : Form
     {

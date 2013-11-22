@@ -1,6 +1,5 @@
-﻿//using HealthInformaticSystem.DataSet;
-using MedicalInformationManagementSystem.DataSet;
-namespace HealthInformaticSystem
+﻿using MedicalInformationManagementSystem.DataSet;
+namespace MedicalInformationManagementSystem
 {
     partial class ViewPatientEMR
     {

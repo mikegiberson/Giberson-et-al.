@@ -14,6 +14,9 @@ namespace MedicalInformationManagementSystem
     public partial class Front : Form
     {
         private Login login;
+        private DoctorSchedule doctorSchedule;
+        private SearchPatient searchPatient;
+        private ManageStaff manageStaff;
 
         public int employeeID;
         public string userName;
@@ -22,9 +25,67 @@ namespace MedicalInformationManagementSystem
         public Front()
         {
             InitializeComponent();
+            Logout();
+        }
+
+        public void Login()
+        {
+            login.Hide();
+            login.Close();
+
+            loginToolStripMenuItem.Visible = false;
+            logoutToolStripMenuItem.Visible = true;
+
+            if (role == "Administrator")
+            {
+                manageStaffToolStripMenuItem.Visible = true;
+            }
+            else if (role == "Doctor")
+            {
+                doctorScheduleToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                searchPatientToolStripMenuItem.Visible = true;
+            }
+        }
+
+        public void Logout()
+        {
+            employeeID = 0;
+            userName = null;
+            role = null;
+
+            loginToolStripMenuItem.Visible = true;
+            manageStaffToolStripMenuItem.Visible = false;
+            doctorScheduleToolStripMenuItem.Visible = false;
+            searchPatientToolStripMenuItem.Visible = false;
+            logoutToolStripMenuItem.Visible = false;
+            
             login = new Login(this);
             login.MdiParent = this;
             login.Show();
+        }
+
+        public void ManageStaff()
+        {
+            manageStaff = new ManageStaff();
+            manageStaff.MdiParent = this;
+            manageStaff.Show();
+        }
+
+        public void DoctorSchedule()
+        {
+            doctorSchedule = new DoctorSchedule();
+            doctorSchedule.MdiParent = this;
+            doctorSchedule.Show();
+        }
+
+        public void SearchPatient()
+        {
+            searchPatient = new SearchPatient();
+            searchPatient.MdiParent = this;
+            searchPatient.Show();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,49 +96,54 @@ namespace MedicalInformationManagementSystem
             }
             else
             {
-                login = new Login(this);
-                login.MdiParent = this;
-                login.Show();
-            }
-        }
-
-        public void CloseLogin()
-        {
-            login.Hide();
-            login.Close();
-            
-            //mnuNav.Items.Clear();
-            loginToolStripMenuItem.Visible = false;
-
-            if (role == "Administrator")
-            {
-                var manageStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
-                {
-                    Text = "Manage Staff"
-                };
-                mnuNav.Items.Add(manageStaffToolStripMenuItem);
-            }
-            else if (role == "Medical Staff")
-            {
-                var doctorScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
-                {
-                    Text = "Doctor Schedule"
-                };
-                mnuNav.Items.Add(doctorScheduleToolStripMenuItem);
-            }
-            else
-            {
-                var schedulingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem()
-                {
-                    Text = "Scheduling"
-                };
-                mnuNav.Items.Add(schedulingToolStripMenuItem);
+                Logout();
             }
         }
 
         private void mnuNav_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Logout();
+        }
+
+        private void doctorScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!doctorSchedule.IsDisposed)
+            {
+                doctorSchedule.Show();
+            }
+            else
+            {
+                DoctorSchedule();
+            }
+        }
+
+        private void searchPatientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!searchPatient.IsDisposed)
+            {
+                searchPatient.Show();
+            }
+            else
+            {
+                SearchPatient();
+            }
+        }
+
+        private void manageStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!manageStaff.IsDisposed)
+            {
+                manageStaff.Show();
+            }
+            else
+            {
+                ManageStaff();
+            }
         }
     }
 }

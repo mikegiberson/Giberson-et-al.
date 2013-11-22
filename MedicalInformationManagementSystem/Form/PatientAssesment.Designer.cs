@@ -1,7 +1,7 @@
 ﻿using MedicalInformationManagementSystem.DataSet;
 using MedicalInformationManagementSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters;
 
-namespace MedicalInformationManagementSystem.Forms
+namespace MedicalInformationManagementSystem
 {
     partial class PatientAssesment
     {

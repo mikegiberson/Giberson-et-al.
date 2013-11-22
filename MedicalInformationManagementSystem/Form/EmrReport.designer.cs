@@ -1,6 +1,5 @@
-﻿//using HealthInformaticSystem.DataSet;
-using MedicalInformationManagementSystem.DataSet;
-namespace HealthInformaticSystem.Reports
+﻿using MedicalInformationManagementSystem.DataSet;
+namespace MedicalInformationManagementSystem
 {
     partial class EmrReport
     {

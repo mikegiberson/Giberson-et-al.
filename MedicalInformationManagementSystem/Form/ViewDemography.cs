@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MIMS;
+
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-using System.IO;
-using MedicalInformationManagementSystem;
-
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     public partial class ViewDemography : Form
     {

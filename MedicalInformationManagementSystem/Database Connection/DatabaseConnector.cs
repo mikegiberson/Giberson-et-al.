@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
-    class DatabaseConnector
+    public class DatabaseConnector
     {
         private SqlConnection conn;
         

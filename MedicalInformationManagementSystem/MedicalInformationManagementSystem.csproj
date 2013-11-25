@@ -7,8 +7,8 @@
     <ProjectGuid>{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HealthInformaticSystem</RootNamespace>
-    <AssemblyName>HealthInformaticSystem</AssemblyName>
+    <RootNamespace>MedicalInformationManagementSystem</RootNamespace>
+    <AssemblyName>MIMS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,10 +37,24 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>.\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,7 +66,28 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetGetEMRDatesIntoComboBox.Designer.cs">
+    <Compile Include="DataSet\DailyReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailyReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form\DailyPatientReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DailyPatientReports.Designer.cs">
+      <DependentUpon>DailyPatientReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetPrintLatestEmr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetViewAndPrintPatientEmr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetViewAndPrintPatientEmr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetGetEMRDatesIntoComboBox.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
@@ -87,6 +122,12 @@
     <Compile Include="Form\PatientAssesment.Designer.cs">
       <DependentUpon>PatientAssesment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\EmrReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EmrReport.Designer.cs">
+      <DependentUpon>EmrReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\UserControlGetPatientDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,9 +155,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\DailyPatientReports.resx">
+      <DependentUpon>DailyPatientReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\PatientAssesment.resx">
       <DependentUpon>PatientAssesment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\EmrReport.resx">
+      <DependentUpon>EmrReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report3.rdlc" />
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
     <EmbeddedResource Include="User Control\UserControlGetPatientDetails.resx">
       <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,16 +186,50 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataSetGetEMRDatesIntoComboBox.xsc">
+    <None Include="DataSet\DailyReportDataSet.xsc">
+      <DependentUpon>DailyReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DailyReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailyReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DailyReportDataSet.xss">
+      <DependentUpon>DailyReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetPrintLatestEmr.xsc">
+      <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetPrintLatestEmr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPrintLatestEmr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetPrintLatestEmr.xss">
+      <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetViewAndPrintPatientEmr.xsc">
+      <DependentUpon>DataSetViewAndPrintPatientEmr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetViewAndPrintPatientEmr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetViewAndPrintPatientEmr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetViewAndPrintPatientEmr.xss">
+      <DependentUpon>DataSetViewAndPrintPatientEmr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xsc">
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
     </None>
-    <None Include="DataSetGetEMRDatesIntoComboBox.xsd">
+    <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSetGetEMRDatesIntoComboBox.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSetGetEMRDatesIntoComboBox.xss">
+    <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xss">
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetViewPatientDiagnosis.xsc">
@@ -193,6 +276,9 @@
     <None Include="DataSet\DataSetViewPatientRadiology.xss">
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\DatabaseConnector.datasource">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -208,6 +294,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestCases\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

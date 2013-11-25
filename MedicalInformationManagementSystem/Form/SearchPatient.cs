@@ -9,15 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalInformationManagementSystem.Reports;
+using MedicalInformationManagementSystem.Forms;
+using System.Text.RegularExpressions;
 
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     public partial class SearchPatient : Form
     {
         DatabaseConnector dc = null;
         Dictionary<String, String> dictionary = null;
         DataTable dtPatient = null;
+        DataTable dtReport = null;
         public String _mySearchId;
        
 
@@ -85,6 +89,62 @@ namespace HealthInformaticSystem
                 MessageBox.Show("Patient does not exist.");
             }
        
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+            dictionary = new Dictionary<string, string>();
+            dictionary.Add("@patientId", patientSearch.Text);
+
+            dc = new DatabaseConnector();
+            dtPatient = dc.getData("CheckPatientExists", dictionary);
+
+            if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
+            {
+                int checkPat = int.Parse(patientSearch.Text);
+                EmrReport repo = new EmrReport();
+                repo.patientId = checkPat;
+                repo.Show();
+            }
+            else
+            {
+                MessageBox.Show("Patient does not exist.");
+            }
+            
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String todaysDate = dateTimePicker1.Text.ToString();
+
+            dictionary = new Dictionary<string, string>();
+            dictionary.Add("@myDate", todaysDate);
+
+            dc = new DatabaseConnector();
+            dtReport = dc.getData("CheckReportExists", dictionary);
+
+            if (int.Parse(dtReport.Rows[0][0].ToString()) > 0)
+            {
+                DailyPatientReports dailyReport = new DailyPatientReports();
+                dailyReport.myDate = todaysDate;
+                dailyReport.Show();
+               
+            }
+            else
+            {
+                MessageBox.Show("No Patient was treated on "+ todaysDate +"\n Report do not exist!");
+            }
+            
+          
+            
+          
+        }
+
+        private void SearchPatient_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

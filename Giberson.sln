@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalInformationManagementSystem", "MedicalInformationManagementSystem\MedicalInformationManagementSystem.csproj", "{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodedUITestProject1", "CodedUITestProject1\CodedUITestProject1.csproj", "{B41CF263-5929-40E6-9DD6-2A05961FE059}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{6DF94CFF-6178-46A0-8B91-4FC9883ED9E9}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B41CF263-5929-40E6-9DD6-2A05961FE059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B41CF263-5929-40E6-9DD6-2A05961FE059}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B41CF263-5929-40E6-9DD6-2A05961FE059}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B41CF263-5929-40E6-9DD6-2A05961FE059}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6DF94CFF-6178-46A0-8B91-4FC9883ED9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6DF94CFF-6178-46A0-8B91-4FC9883ED9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DF94CFF-6178-46A0-8B91-4FC9883ED9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -44,11 +44,10 @@ namespace MedicalInformationManagementSystem
             patId = int.Parse(viewEMRPatientId);
             ViewPatientRadiologyGridView.Hide();
 
-
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", patId.ToString());
+            dictionary= createPatientDictionary(patId.ToString());
             dc = new DatabaseConnector();
-            dtPatient = dc.getData("GetPatient", dictionary);
+            dtPatient = createGetPatient(dictionary);
+            
             label11.Text=dtPatient.Rows[0][0].ToString();
             label13.Text = dtPatient.Rows[0][1].ToString();
             label5.Text = dtPatient.Rows[0][2].ToString();
@@ -59,6 +58,18 @@ namespace MedicalInformationManagementSystem
 
         }
 
+        public Dictionary<String, String> createPatientDictionary(String patientAssementId)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@patientId", patientAssementId);
+            return dic;
+        }
+
+        public DataTable createGetPatient(Dictionary<String, String> dic)
+        {
+            DataTable dTab = dc.getData("GetPatient", dic);
+            return dTab;
+        }
        
         private void button5_Click(object sender, EventArgs e)
         {
@@ -70,23 +81,34 @@ namespace MedicalInformationManagementSystem
 
         private void onSortByChange(object sender, EventArgs e)
         {
-            if (radioButtonName.Checked == true)
+            sortby = getSortBy(radioButtonName.Checked, radioButtonID.Checked, radioButtonDateAndTime.Checked);
+            if(sortby==1)
             {
-                sortby = 1;
+                rdName.Checked = true;
             }
-            else if (radioButtonID.Checked == true)
+            
+        }
+
+        public short getSortBy(Boolean opName, Boolean opId, Boolean opDateAndTime )
+        {
+            short sortBy = 1;
+            if (opName == true)
             {
-                sortby = 2;
+                sortBy = 1;
             }
-            else if (radioButtonDateAndTime.Checked == true)
+            else if (opId == true)
             {
-                sortby = 3;
+                sortBy = 2;
+            }
+            else if (opDateAndTime == true)
+            {
+                sortBy = 3;
             }
             else
             {
-                rdName.Checked = true;
-                sortby = 1;
+                sortBy = 1;
             }
+            return sortBy;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

@@ -67,6 +67,7 @@
     <Compile Include="TestPatientAssesment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestUpdatePatientDemography.cs" />
+    <Compile Include="TestViewPatientEmr.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MedicalInformationManagementSystem\MedicalInformationManagementSystem.csproj">

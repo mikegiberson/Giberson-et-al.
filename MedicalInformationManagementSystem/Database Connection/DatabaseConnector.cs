@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalInformationManagementSystem
+namespace HealthInformaticSystem
 {
     public class DatabaseConnector
     {
@@ -24,12 +24,7 @@ namespace MedicalInformationManagementSystem
         {
             if (conn == null)
             {
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "bang.Giberson"; // <-- change this to your ms sql server
-                builder.InitialCatalog = "Giberson";
-                builder.IntegratedSecurity = true;
-
-                conn = new SqlConnection("Data Source=BANG\\;Initial Catalog=Giberson;Integrated Security=True");
+                conn = new SqlConnection(Properties.Settings.Default.GibersonConnectionString);
             }
             return conn;
         }
@@ -45,6 +40,7 @@ namespace MedicalInformationManagementSystem
             DataTable table = new DataTable();
             
             SqlConnection conn = getConnection();                
+           // conn.Open();
 
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = SqlStatement;

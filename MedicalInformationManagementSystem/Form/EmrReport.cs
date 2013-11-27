@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MedicalInformationManagementSystem.Reports
+namespace MedicalInformationManagementSystem
 {
     public partial class EmrReport : Form
     {
@@ -22,7 +22,7 @@ namespace MedicalInformationManagementSystem.Reports
         {
             this.getPatientLatestEmrReportTableAdapter.Fill(dataSetPrintLatestEmr.GetPatientLatestEmrReport, patientId);
             this.reportViewer1.RefreshReport();
-           // this.reportViewer2.RefreshReport();
+        
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)

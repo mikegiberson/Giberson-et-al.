@@ -1,5 +1,5 @@
-﻿using MedicalInformationManagementSystem.DataSet;
-namespace MedicalInformationManagementSystem.Reports
+﻿using HealthInformaticSystem.DataSet;
+namespace MedicalInformationManagementSystem
 {
     partial class EmrReport
     {
@@ -30,11 +30,11 @@ namespace MedicalInformationManagementSystem.Reports
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.getPatientLatestEmrReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetPrintLatestEmr = new MedicalInformationManagementSystem.DataSet.DataSetPrintLatestEmr();
+            this.dataSetPrintLatestEmr = new HealthInformaticSystem.DataSet.DataSetPrintLatestEmr();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.getPatientLatestEmrReportTableAdapter = new MedicalInformationManagementSystem.DataSet.DataSetPrintLatestEmrTableAdapters.GetPatientLatestEmrReportTableAdapter();
+            this.getPatientLatestEmrReportTableAdapter = new HealthInformaticSystem.DataSet.DataSetPrintLatestEmrTableAdapters.GetPatientLatestEmrReportTableAdapter();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientLatestEmrReportBindingSource)).BeginInit();
@@ -54,10 +54,10 @@ namespace MedicalInformationManagementSystem.Reports
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "PrintablePatientEmrReport";
-            reportDataSource1.Value = this.getPatientLatestEmrReportBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "MedicalInformationManagementSystem.Reports.Report1.rdlc";
+            reportDataSource2.Name = "PrintablePatientEmrReport";
+            reportDataSource2.Value = this.getPatientLatestEmrReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "HealthInformaticSystem.Reports.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(845, 436);
@@ -106,7 +106,7 @@ namespace MedicalInformationManagementSystem.Reports
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource getPatientLatestEmrReportBindingSource;
         private DataSetPrintLatestEmr dataSetPrintLatestEmr;
-        private MedicalInformationManagementSystem.DataSet.DataSetPrintLatestEmrTableAdapters.GetPatientLatestEmrReportTableAdapter getPatientLatestEmrReportTableAdapter;
+        private HealthInformaticSystem.DataSet.DataSetPrintLatestEmrTableAdapters.GetPatientLatestEmrReportTableAdapter getPatientLatestEmrReportTableAdapter;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
     }

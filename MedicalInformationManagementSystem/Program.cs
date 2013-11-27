@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalInformationManagementSystem;
 
-namespace MedicalInformationManagementSystem
+namespace HealthInformaticSystem
 {
     static class Program
     {
@@ -16,7 +17,9 @@ namespace MedicalInformationManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SearchPatient());
+        //Application.Run(new MIMS.CreateDemForm());
+          // Application.Run(new ViewDemography());
+           Application.Run(new SearchPatient());
         }
     }
 }

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MedicalInformationManagementSystem.DataSet;
+using HealthInformaticSystem;
+using HealthInformaticSystem.DataSet;
 using MedicalInformationManagementSystem.Forms;
 
 
@@ -164,6 +165,13 @@ namespace MedicalInformationManagementSystem
             assesment.PatientAssesmentPatientId = viewEMRPatientId;
             assesment.patid = patId;
             assesment.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            EmrReport er = new EmrReport();
+            er.patientId = patId;
+            er.Show();
         }
 
        

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text;
+
 using System.Windows.Input;
 using MedicalInformationManagementSystem;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

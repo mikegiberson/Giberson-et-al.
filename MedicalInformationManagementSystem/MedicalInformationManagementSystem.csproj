@@ -7,8 +7,8 @@
     <ProjectGuid>{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MedicalInformationManagementSystem</RootNamespace>
-    <AssemblyName>MIMS</AssemblyName>
+    <RootNamespace>HealthInformaticSystem</RootNamespace>
+    <AssemblyName>HealthInformaticSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,15 +45,13 @@
     <Reference Include="itextsharp.xtra">
       <HintPath>.\itextsharp.xtra.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,34 +60,35 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class Library\Address.cs" />
+    <Compile Include="Class Library\Allergy.cs" />
+    <Compile Include="Class Library\Doctor.cs" />
+    <Compile Include="Class Library\ReferralDoctor.cs" />
+    <Compile Include="Database Connection\DatabaseConnector.cs" />
+    <Compile Include="Class Library\Email.cs" />
+    <Compile Include="Class Library\Insurance.cs" />
+    <Compile Include="Class Library\Patient.cs" />
     <Compile Include="DataSet\DailyReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DailyReportDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form\DailyPatientReports.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DataSet\DataSetGetEMRDatesIntoComboBox.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form\DailyPatientReports.Designer.cs">
-      <DependentUpon>DailyPatientReports.cs</DependentUpon>
+    <Compile Include="DataSet\DataSetGetPatientLaboratory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGetPatientLaboratory.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DataSetPrintLatestEmr.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetViewAndPrintPatientEmr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetViewAndPrintPatientEmr.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetGetEMRDatesIntoComboBox.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DataSetViewPatientDiagnosis.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -102,43 +100,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewPatientMedication.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetGetPatientLaboratory.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetGetPatientLaboratory.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetViewPatientRadiology.cs">
-      <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DataSet\DataSetViewPatientRadiology.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form\PatientAssesment.cs">
+    <Compile Include="Form\CreateDemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\PatientAssesment.Designer.cs">
-      <DependentUpon>PatientAssesment.cs</DependentUpon>
+    <Compile Include="Form\CreateDemForm.designer.cs">
+      <DependentUpon>CreateDemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class Library\PatientAllergy.cs" />
+    <Compile Include="Class Library\Phone.cs" />
+    <Compile Include="Form\DailyPatientReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\DailyPatientReports.designer.cs">
+      <DependentUpon>DailyPatientReports.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\EmrReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\EmrReport.Designer.cs">
+    <Compile Include="Form\EmrReport.designer.cs">
       <DependentUpon>EmrReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\UserControlGetPatientDetails.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control\UserControlGetPatientDetails.Designer.cs">
-      <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\ViewPatientEMR.cs">
+    <Compile Include="Form\PatientAssesment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ViewPatientEMR.Designer.cs">
-      <DependentUpon>ViewPatientEMR.cs</DependentUpon>
+    <Compile Include="Form\PatientAssesment.designer.cs">
+      <DependentUpon>PatientAssesment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SearchPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SearchPatient.designer.cs">
+      <DependentUpon>SearchPatient.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\UpdatePatientDemography.cs">
       <SubType>Form</SubType>
@@ -146,37 +143,52 @@
     <Compile Include="Form\UpdatePatientDemography.designer.cs">
       <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database Connection\DatabaseConnector.cs" />
-    <Compile Include="Form\SearchPatient.cs">
+    <Compile Include="Form\ViewPatientEMR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\SearchPatient.Designer.cs">
-      <DependentUpon>SearchPatient.cs</DependentUpon>
+    <Compile Include="Form\ViewPatientEMR.designer.cs">
+      <DependentUpon>ViewPatientEMR.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Form\ViewDemography.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ViewDemography.Designer.cs">
+      <DependentUpon>ViewDemography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ScheduleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ScheduleList.Designer.cs">
+      <DependentUpon>ScheduleList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\CreateDemForm.resx">
+      <DependentUpon>CreateDemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\DailyPatientReports.resx">
       <DependentUpon>DailyPatientReports.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\PatientAssesment.resx">
-      <DependentUpon>PatientAssesment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EmrReport.resx">
       <DependentUpon>EmrReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report3.rdlc" />
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
-    <EmbeddedResource Include="User Control\UserControlGetPatientDetails.resx">
-      <DependentUpon>UserControlGetPatientDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Form\PatientAssesment.resx">
+      <DependentUpon>PatientAssesment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ViewPatientEMR.resx">
-      <DependentUpon>ViewPatientEMR.cs</DependentUpon>
+    <EmbeddedResource Include="Form\ScheduleList.resx">
+      <DependentUpon>ScheduleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SearchPatient.resx">
+      <DependentUpon>SearchPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\UpdatePatientDemography.resx">
       <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\SearchPatient.resx">
-      <DependentUpon>SearchPatient.cs</DependentUpon>
+    <EmbeddedResource Include="Form\ViewDemography.resx">
+      <DependentUpon>ViewDemography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ViewPatientEMR.resx">
+      <DependentUpon>ViewPatientEMR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,8 +198,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Report3.rdlc" />
     <None Include="DataSet\DailyReportDataSet.xsc">
       <DependentUpon>DailyReportDataSet.xsd</DependentUpon>
     </None>
@@ -199,28 +212,6 @@
     <None Include="DataSet\DailyReportDataSet.xss">
       <DependentUpon>DailyReportDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetPrintLatestEmr.xsc">
-      <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetPrintLatestEmr.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetPrintLatestEmr.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetPrintLatestEmr.xss">
-      <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetViewAndPrintPatientEmr.xsc">
-      <DependentUpon>DataSetViewAndPrintPatientEmr.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetViewAndPrintPatientEmr.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetViewAndPrintPatientEmr.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetViewAndPrintPatientEmr.xss">
-      <DependentUpon>DataSetViewAndPrintPatientEmr.xsd</DependentUpon>
-    </None>
     <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xsc">
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
     </None>
@@ -231,6 +222,28 @@
     </None>
     <None Include="DataSet\DataSetGetEMRDatesIntoComboBox.xss">
       <DependentUpon>DataSetGetEMRDatesIntoComboBox.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetGetPatientLaboratory.xsc">
+      <DependentUpon>DataSetGetPatientLaboratory.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetGetPatientLaboratory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGetPatientLaboratory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetGetPatientLaboratory.xss">
+      <DependentUpon>DataSetGetPatientLaboratory.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetPrintLatestEmr.xsc">
+      <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetPrintLatestEmr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPrintLatestEmr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetPrintLatestEmr.xss">
+      <DependentUpon>DataSetPrintLatestEmr.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetViewPatientDiagnosis.xsc">
       <DependentUpon>DataSetViewPatientDiagnosis.xsd</DependentUpon>
@@ -254,17 +267,6 @@
     <None Include="DataSet\DataSetViewPatientMedication.xss">
       <DependentUpon>DataSetViewPatientMedication.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetGetPatientLaboratory.xsc">
-      <DependentUpon>DataSetGetPatientLaboratory.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetGetPatientLaboratory.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetGetPatientLaboratory.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetGetPatientLaboratory.xss">
-      <DependentUpon>DataSetGetPatientLaboratory.xsd</DependentUpon>
-    </None>
     <None Include="DataSet\DataSetViewPatientRadiology.xsc">
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </None>
@@ -276,9 +278,6 @@
     <None Include="DataSet\DataSetViewPatientRadiology.xss">
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </None>
-    <None Include="Properties\DataSources\DatabaseConnector.datasource">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -288,15 +287,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Users Documentation\Users Documentation.docx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TestCases\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

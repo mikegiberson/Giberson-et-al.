@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using MedicalInformationManagementSystem;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using HealthInformaticSystem;
+
 
 
 namespace MIMS

@@ -9,9 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MedicalInformationManagementSystem.Reports;
+
 using MedicalInformationManagementSystem.Forms;
 using System.Text.RegularExpressions;
+using HealthInformaticSystem;
 
 
 namespace MedicalInformationManagementSystem
@@ -40,16 +41,15 @@ namespace MedicalInformationManagementSystem
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", patientSearch.Text);
-
+            _mySearchId = patientSearch.Text;
+            dictionary = createCheckPatientExistsDictionary(_mySearchId);
             dc = new DatabaseConnector();
-            dtPatient = dc.getData("CheckPatientExists", dictionary);
+            dtPatient = checkPatientExists(dictionary);
 
             if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
             {
-               
-                UpdatePatientDemography cd = new UpdatePatientDemography();
+
+                ViewDemography cd = new ViewDemography();
                 cd.patientId = int.Parse(patientSearch.Text);
                 patientSearch.Clear();
                 cd.Show();
@@ -57,31 +57,48 @@ namespace MedicalInformationManagementSystem
             else
             {
                 MessageBox.Show("Patient does not exist.");
-            }
 
-           
+                DialogResult result = MessageBox.Show("Create New Patient Demography?", "New Demography", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    this.Hide();
+                    CreateDemForm create = new CreateDemForm();
+
+                    create.Show();
+                }
+            }
         }
+
+        public Dictionary<String, String> createCheckPatientExistsDictionary(String patientAssementId)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@patientId", patientAssementId);
+            return dic;
+        }
+
+        public DataTable checkPatientExists(Dictionary<String, String> dic)
+        {
+            DataTable dTab = dc.getData("CheckPatientExists", dic);
+            return dTab;
+        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
             _mySearchId = patientSearch.Text;
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", patientSearch.Text);
+            dictionary = createCheckPatientExistsDictionary(_mySearchId);
 
             dc = new DatabaseConnector();
-            dtPatient = dc.getData("CheckPatientExists", dictionary);
+            dtPatient = checkPatientExists(dictionary);
 
 
             if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
             {
                 
                 ViewPatientEMR view = new ViewPatientEMR();
-                view.viewEMRPatientId = patientSearch.Text.ToString();
-                
-                //UserControlGetPatientDetails userControl = new UserControlGetPatientDetails();
-                //userControl.usercontrolPatientId = view.viewEMRPatientId;
-
-                
+                view.viewEMRPatientId = patientSearch.Text.ToString();          
                 view.Show();
             }
             else
@@ -93,12 +110,13 @@ namespace MedicalInformationManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", patientSearch.Text);
+            if(patientSearch.Text!="")
+            {
+                _mySearchId = patientSearch.Text;
+            dictionary = createCheckPatientExistsDictionary(_mySearchId);
 
             dc = new DatabaseConnector();
-            dtPatient = dc.getData("CheckPatientExists", dictionary);
+            dtPatient = checkPatientExists(dictionary);
 
             if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
             {
@@ -111,22 +129,54 @@ namespace MedicalInformationManagementSystem
             {
                 MessageBox.Show("Patient does not exist.");
             }
+        }
+        else
+    {
+        MessageBox.Show("No Patient ID Provided!");
+    }
             
            
         }
 
+
+        //Include it whenever using this calendar to any other form
+        public Dictionary<String, String> createCheckDailyReortExistsDictionary(String selectedDate)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@myDate", selectedDate);
+            return dic;
+        }
+
+        public Dictionary<String, String> createDailyReportDictionary(String selectedDate)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@todays", selectedDate);
+            return dic;
+        }
+
+        public DataTable checkDailyReportExists(Dictionary<String, String> dic)
+        {
+            DataTable dTab = dc.getData("CheckReportExists", dic);
+            return dTab;
+        }
+        public DataTable createDailyReport(Dictionary<String, String> dic)
+        {
+            DataTable dTab = dc.getData("GetDailyPatientsReport", dic);
+            return dTab;
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
+         
             String todaysDate = dateTimePicker1.Text.ToString();
-
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@myDate", todaysDate);
-
+            dictionary = createCheckDailyReortExistsDictionary(todaysDate);
             dc = new DatabaseConnector();
-            dtReport = dc.getData("CheckReportExists", dictionary);
-
+            dtReport = checkDailyReportExists(dictionary);
             if (int.Parse(dtReport.Rows[0][0].ToString()) > 0)
             {
+                dictionary = createDailyReportDictionary(todaysDate);
+                dc = new DatabaseConnector();
+                dtReport = createDailyReport(dictionary);
                 DailyPatientReports dailyReport = new DailyPatientReports();
                 dailyReport.myDate = todaysDate;
                 dailyReport.Show();
@@ -144,7 +194,7 @@ namespace MedicalInformationManagementSystem
 
         private void SearchPatient_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

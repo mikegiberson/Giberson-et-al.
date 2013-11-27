@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GibersonConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GibersonConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MedicalInformationManagementSystem.Properties.Settings.GlobalReference.Default.GibersonConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GibersonConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GibersonConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HealthInformaticSystem.Properties.Settings.GlobalReference.Default.GibersonConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetPatientLaboratoryTableAdapter" GeneratorDataComponentClassName="GetPatientLaboratoryTableAdapter" Name="GetPatientLaboratory" UserDataComponentName="GetPatientLaboratoryTableAdapter">

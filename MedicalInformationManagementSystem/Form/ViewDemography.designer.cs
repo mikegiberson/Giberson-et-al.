@@ -56,6 +56,7 @@
             this.lblPatientID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
+            this.lblDOB = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -81,7 +82,6 @@
             this.btnBookAppt = new System.Windows.Forms.Button();
             this.btnViewEMR = new System.Windows.Forms.Button();
             this.btnExpPt = new System.Windows.Forms.Button();
-            this.lblDOB = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -418,6 +418,17 @@
             this.lblGender.Size = new System.Drawing.Size(0, 18);
             this.lblGender.TabIndex = 24;
             // 
+            // lblDOB
+            // 
+            this.lblDOB.AutoSize = true;
+            this.lblDOB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblDOB.Location = new System.Drawing.Point(95, 80);
+            this.lblDOB.Name = "lblDOB";
+            this.lblDOB.Size = new System.Drawing.Size(0, 18);
+            this.lblDOB.TabIndex = 23;
+            this.lblDOB.TextChanged += new System.EventHandler(this.lblFirstName_TextChanged);
+            // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
@@ -700,17 +711,7 @@
             this.btnExpPt.TabIndex = 36;
             this.btnExpPt.Text = "Export Patient";
             this.btnExpPt.UseVisualStyleBackColor = true;
-            // 
-            // lblDOB
-            // 
-            this.lblDOB.AutoSize = true;
-            this.lblDOB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblDOB.Location = new System.Drawing.Point(95, 80);
-            this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(0, 18);
-            this.lblDOB.TabIndex = 23;
-            this.lblDOB.TextChanged += new System.EventHandler(this.lblFirstName_TextChanged);
+            this.btnExpPt.Click += new System.EventHandler(this.btnExpPt_Click);
             // 
             // ViewDemography
             // 

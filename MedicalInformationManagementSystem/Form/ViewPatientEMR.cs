@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HealthInformaticSystem;
+using HealthInformaticSystem.DataSet;
+using MedicalInformationManagementSystem.Forms;
 
-using MedicalInformationManagementSystem.DataSet;
 
 namespace MedicalInformationManagementSystem
 {
@@ -29,7 +31,12 @@ namespace MedicalInformationManagementSystem
 
         private void ViewPatientEMR_Load(object sender, EventArgs e)
         {
-           
+            //userControlGetPatientDetails1.mygetPatientId(viewEMRPatientId);
+            // TODO: This line of code loads data into the 'gibersonDataSet2.GetAllAllergies' table. You can move, or remove it, as needed.
+            //this.getAllAllergiesTableAdapter.Fill(this.gibersonDataSet2.GetAllAllergies);
+            // TODO: This line of code loads data into the 'gibersonDataSet.Patient' table. You can move, or remove it, as needed.
+            //UserControlGetPatientDetails userControl = new UserControlGetPatientDetails();
+            //userControl.usercontrolPatientId=viewEMRPatientId;
             rdId.Hide();
             rdName.Hide();
             rdTime.Hide();
@@ -38,13 +45,12 @@ namespace MedicalInformationManagementSystem
             patId = int.Parse(viewEMRPatientId);
             ViewPatientRadiologyGridView.Hide();
 
-
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", patId.ToString());
+            dictionary= createPatientDictionary(patId.ToString());
             dc = new DatabaseConnector();
-            dtPatient = dc.getData("GetPatient", dictionary);
+            dtPatient = createGetPatient(dictionary);
+            
             label11.Text=dtPatient.Rows[0][0].ToString();
-            label13.Text = dtPatient.Rows[0][1].ToString();
+            registedDate.Text = dtPatient.Rows[0][1].ToString();
             label5.Text = dtPatient.Rows[0][2].ToString();
             label4.Text = dtPatient.Rows[0][3].ToString();
             label8.Text = dtPatient.Rows[0][4].ToString();
@@ -53,10 +59,22 @@ namespace MedicalInformationManagementSystem
 
         }
 
+        public Dictionary<String, String> createPatientDictionary(String patientAssementId)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@patientId", patientAssementId);
+            return dic;
+        }
+
+        public DataTable createGetPatient(Dictionary<String, String> dic)
+        {
+            DataTable dTab = dc.getData("GetPatient", dic);
+            return dTab;
+        }
        
         private void button5_Click(object sender, EventArgs e)
         {
-           PatientAssesment h = new PatientAssesment();
+           MedicalInformationManagementSystem.Forms.PatientAssesment h=new MedicalInformationManagementSystem.Forms.PatientAssesment();
            h.PatientAssesmentPatientId = viewEMRPatientId;
            h.Show();
           
@@ -64,23 +82,34 @@ namespace MedicalInformationManagementSystem
 
         private void onSortByChange(object sender, EventArgs e)
         {
-            if (radioButtonName.Checked == true)
+            sortby = getSortBy(radioButtonName.Checked, radioButtonID.Checked, radioButtonDateAndTime.Checked);
+            if(sortby==1)
             {
-                sortby = 1;
+                rdName.Checked = true;
             }
-            else if (radioButtonID.Checked == true)
+            
+        }
+
+        public short getSortBy(Boolean opName, Boolean opId, Boolean opDateAndTime )
+        {
+            short sortBy = 1;
+            if (opName == true)
             {
-                sortby = 2;
+                sortBy = 1;
             }
-            else if (radioButtonDateAndTime.Checked == true)
+            else if (opId == true)
             {
-                sortby = 3;
+                sortBy = 2;
+            }
+            else if (opDateAndTime == true)
+            {
+                sortBy = 3;
             }
             else
             {
-                rdName.Checked = true;
-                sortby = 1;
+                sortBy = 1;
             }
+            return sortBy;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -138,16 +167,11 @@ namespace MedicalInformationManagementSystem
             assesment.Show();
         }
 
-        private void getPatientRadiologyBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button11_Click(object sender, EventArgs e)
         {
-            EmrReport repo = new EmrReport();
-            repo.patientId = patId;
-            repo.Show();
+            EmrReport er = new EmrReport();
+            er.patientId = patId;
+            er.Show();
         }
 
        

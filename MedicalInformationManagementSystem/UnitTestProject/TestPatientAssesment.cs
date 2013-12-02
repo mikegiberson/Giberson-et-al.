@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MedicalInformationManagementSystem.Forms;
-
 using System.Windows.Input;
 using System.Data;
 
@@ -14,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using MedicalInformationManagementSystem.Reports;
 using System.Text.RegularExpressions;
+using HealthInformaticSystem;
 
 
 namespace UnitTestProject1
@@ -92,11 +92,11 @@ namespace UnitTestProject1
             String assesmentId = "1";
             
             Dictionary<String, String> d=pa.createEmrRequest(assesmentId,emrDate);
-           // DatabaseConnector con=new DatabaseConnector();
-           // DataTable dat = pa.getPatientEMRAccordingToDate(d,con);
-           // Assert.IsNotNull(dat);
+            DatabaseConnector con=new DatabaseConnector();
+            DataTable dat = pa.getPatientEMRAccordingToDate(d,con);
+            Assert.IsNotNull(dat);
             // testing for just for one value
-           // Assert.AreEqual(dat.Rows[0][1].ToString(),"2");
+            Assert.AreEqual(dat.Rows[0][1].ToString(),"2");
         }
 
       

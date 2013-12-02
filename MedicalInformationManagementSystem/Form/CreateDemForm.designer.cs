@@ -1,4 +1,4 @@
-﻿namespace MedicalInformationManagementSystem
+﻿namespace MIMS
 {
     partial class CreateDemForm
     {

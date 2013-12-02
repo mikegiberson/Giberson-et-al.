@@ -1,4 +1,4 @@
-﻿using MedicalInformationManagementSystem.DataSet;
+﻿using HealthInformaticSystem.DataSet;
 namespace MedicalInformationManagementSystem
 {
     partial class ViewPatientEMR
@@ -39,7 +39,7 @@ namespace MedicalInformationManagementSystem
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getPatientRadiologyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetViewPatientRadiology = new MedicalInformationManagementSystem.DataSet.DataSetViewPatientRadiology();
+            this.dataSetViewPatientRadiology = new HealthInformaticSystem.DataSet.DataSetViewPatientRadiology();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -53,29 +53,29 @@ namespace MedicalInformationManagementSystem
             this.nameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getPatientDiagnosisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetViewPatientDiagnosis1 = new MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosis();
+            this.dataSetViewPatientDiagnosis1 = new HealthInformaticSystem.DataSet.DataSetViewPatientDiagnosis();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.laboratoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timestampDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getPatientLaboratoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetGetPatientLaboratory = new MedicalInformationManagementSystem.DataSet.DataSetGetPatientLaboratory();
+            this.dataSetGetPatientLaboratory = new HealthInformaticSystem.DataSet.DataSetGetPatientLaboratory();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.medicationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timestampDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getPatientMedicationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetViewPatientMedication = new MedicalInformationManagementSystem.DataSet.DataSetViewPatientMedication();
+            this.dataSetViewPatientMedication = new HealthInformaticSystem.DataSet.DataSetViewPatientMedication();
             this.rdName = new System.Windows.Forms.RadioButton();
             this.rdId = new System.Windows.Forms.RadioButton();
             this.rdTime = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.getPatientRadiologyTableAdapter = new MedicalInformationManagementSystem.DataSet.DataSetViewPatientRadiologyTableAdapters.GetPatientRadiologyTableAdapter();
-            this.getPatientDiagnosisTableAdapter1 = new MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.GetPatientDiagnosisTableAdapter();
-            this.getPatientLaboratoryTableAdapter = new MedicalInformationManagementSystem.DataSet.DataSetGetPatientLaboratoryTableAdapters.GetPatientLaboratoryTableAdapter();
-            this.getPatientMedicationTableAdapter = new MedicalInformationManagementSystem.DataSet.DataSetViewPatientMedicationTableAdapters.GetPatientMedicationTableAdapter();
+            this.getPatientRadiologyTableAdapter = new HealthInformaticSystem.DataSet.DataSetViewPatientRadiologyTableAdapters.GetPatientRadiologyTableAdapter();
+            this.getPatientDiagnosisTableAdapter1 = new HealthInformaticSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.GetPatientDiagnosisTableAdapter();
+            this.getPatientLaboratoryTableAdapter = new HealthInformaticSystem.DataSet.DataSetGetPatientLaboratoryTableAdapters.GetPatientLaboratoryTableAdapter();
+            this.getPatientMedicationTableAdapter = new HealthInformaticSystem.DataSet.DataSetViewPatientMedicationTableAdapters.GetPatientMedicationTableAdapter();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.radiologyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timestampDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,7 +108,7 @@ namespace MedicalInformationManagementSystem
             this.radioButtonID = new System.Windows.Forms.RadioButton();
             this.radioButtonName = new System.Windows.Forms.RadioButton();
             this.PatientDetails = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.registedDate = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -213,7 +213,6 @@ namespace MedicalInformationManagementSystem
             // 
             this.getPatientRadiologyBindingSource.DataMember = "GetPatientRadiology";
             this.getPatientRadiologyBindingSource.DataSource = this.dataSetViewPatientRadiology;
-            this.getPatientRadiologyBindingSource.CurrentChanged += new System.EventHandler(this.getPatientRadiologyBindingSource_CurrentChanged);
             // 
             // dataSetViewPatientRadiology
             // 
@@ -853,7 +852,7 @@ namespace MedicalInformationManagementSystem
             // 
             // PatientDetails
             // 
-            this.PatientDetails.Controls.Add(this.label13);
+            this.PatientDetails.Controls.Add(this.registedDate);
             this.PatientDetails.Controls.Add(this.label12);
             this.PatientDetails.Controls.Add(this.label11);
             this.PatientDetails.Controls.Add(this.label10);
@@ -873,15 +872,15 @@ namespace MedicalInformationManagementSystem
             this.PatientDetails.TabStop = false;
             this.PatientDetails.Text = "Patient Demography";
             // 
-            // label13
+            // registedDate
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(737, 49);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 16);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "label13";
+            this.registedDate.AutoSize = true;
+            this.registedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registedDate.Location = new System.Drawing.Point(737, 49);
+            this.registedDate.Name = "registedDate";
+            this.registedDate.Size = new System.Drawing.Size(52, 16);
+            this.registedDate.TabIndex = 11;
+            this.registedDate.Text = "label13";
             // 
             // label12
             // 
@@ -898,9 +897,9 @@ namespace MedicalInformationManagementSystem
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(699, 14);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 16);
+            this.label11.Size = new System.Drawing.Size(61, 16);
             this.label11.TabIndex = 9;
-            this.label11.Text = "label11";
+            this.label11.Text = "patientID";
             // 
             // label10
             // 
@@ -989,11 +988,11 @@ namespace MedicalInformationManagementSystem
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(939, 287);
+            this.button11.Location = new System.Drawing.Point(931, 198);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(108, 23);
+            this.button11.Size = new System.Drawing.Size(106, 23);
             this.button11.TabIndex = 5;
-            this.button11.Text = "Print Patient EMR";
+            this.button11.Text = "Print EMR Report";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -1001,7 +1000,7 @@ namespace MedicalInformationManagementSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 522);
+            this.ClientSize = new System.Drawing.Size(1049, 522);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.PatientDetails);
             this.Controls.Add(this.groupBox6);
@@ -1053,21 +1052,21 @@ namespace MedicalInformationManagementSystem
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.BindingSource getPatientRadiologyBindingSource;
         private DataSetViewPatientRadiology dataSetViewPatientRadiology;
-        private MedicalInformationManagementSystem.DataSet.DataSetViewPatientRadiologyTableAdapters.GetPatientRadiologyTableAdapter getPatientRadiologyTableAdapter;
+        private HealthInformaticSystem.DataSet.DataSetViewPatientRadiologyTableAdapters.GetPatientRadiologyTableAdapter getPatientRadiologyTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource getPatientLaboratoryBindingSource;
         private DataSetGetPatientLaboratory dataSetGetPatientLaboratory;
-        private MedicalInformationManagementSystem.DataSet.DataSetGetPatientLaboratoryTableAdapters.GetPatientLaboratoryTableAdapter getPatientLaboratoryTableAdapter;
+        private HealthInformaticSystem.DataSet.DataSetGetPatientLaboratoryTableAdapters.GetPatientLaboratoryTableAdapter getPatientLaboratoryTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource getPatientMedicationBindingSource;
         private DataSetViewPatientMedication dataSetViewPatientMedication;
-        private MedicalInformationManagementSystem.DataSet.DataSetViewPatientMedicationTableAdapters.GetPatientMedicationTableAdapter getPatientMedicationTableAdapter;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn radiologyIDDataGridViewTextBoxColumn1;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn timestampDataGridViewTextBoxColumn3;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn3;
-        ////private DataSetViewPatientDiagnosis dataSetViewPatientDiagnosis;
-        ////private HealthInformaticSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.DataSet.GetPatientRadiologyTableAdapter getPatientRadiologyTableAdapter1;
+        private HealthInformaticSystem.DataSet.DataSetViewPatientMedicationTableAdapters.GetPatientMedicationTableAdapter getPatientMedicationTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn radiologyIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timestampDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn3;
+        //private DataSetViewPatientDiagnosis dataSetViewPatientDiagnosis;
+        //private MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.DataSet.GetPatientRadiologyTableAdapter getPatientRadiologyTableAdapter1;
         //private System.Windows.Forms.DataGridViewTextBoxColumn patientIDDataGridViewTextBoxColumn3;
         //private System.Windows.Forms.DataGridViewTextBoxColumn doctorIDDataGridViewTextBoxColumn3;
         //private System.Windows.Forms.DataGridViewTextBoxColumn radiologyID1DataGridViewTextBoxColumn1;
@@ -1078,8 +1077,8 @@ namespace MedicalInformationManagementSystem
         //private System.Windows.Forms.DataGridViewTextBoxColumn diagnosisID1DataGridViewTextBoxColumn;
         //private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
         //private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn4;
-        //private HealthInformaticSystem.DataSet.DataSetViewPatientDiagnosis dataSetViewPatientDiagnosis;
-        //private HealthInformaticSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.GetPatientDiagnosisTableAdapter getPatientDiagnosisTableAdapter;
+        //private MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosis dataSetViewPatientDiagnosis;
+        private HealthInformaticSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.GetPatientDiagnosisTableAdapter getPatientDiagnosisTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn timestampDataGridViewTextBoxColumn5;
@@ -1087,7 +1086,7 @@ namespace MedicalInformationManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn5;
         private System.Windows.Forms.BindingSource getPatientDiagnosisBindingSource;
         private DataSetViewPatientDiagnosis dataSetViewPatientDiagnosis1;
-        private MedicalInformationManagementSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.GetPatientDiagnosisTableAdapter getPatientDiagnosisTableAdapter1;
+        private HealthInformaticSystem.DataSet.DataSetViewPatientDiagnosisTableAdapters.GetPatientDiagnosisTableAdapter getPatientDiagnosisTableAdapter1;
         private System.Windows.Forms.RadioButton rdName;
         private System.Windows.Forms.RadioButton rdId;
         private System.Windows.Forms.RadioButton rdTime;
@@ -1146,7 +1145,7 @@ namespace MedicalInformationManagementSystem
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label registedDate;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
     }

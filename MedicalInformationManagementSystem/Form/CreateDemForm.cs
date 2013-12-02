@@ -9,16 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+
+using HealthInformaticSystem;
 using System.Globalization;
+using HealthInformaticSystem.Class_Library;
+using MedicalInformationManagementSystem;
 
-using MedicalInformationManagementSystem.Class;
 
-namespace MedicalInformationManagementSystem
+
+
+
+namespace MIMS
 {
     public partial class CreateDemForm : Form
     {
 
-        private static SqlConnection myConnection = new SqlConnection(MedicalInformationManagementSystem.Properties.Settings.Default.GibersonConnectionString);
+
+        private static SqlConnection myConnection =  new SqlConnection(HealthInformaticSystem.Properties.Settings.Default.GibersonConnectionString);
+
         DataTable dtInsurance = null;
         DataTable dtAllergy = null;
         DataTable dtDoctor = null;
@@ -44,7 +52,7 @@ namespace MedicalInformationManagementSystem
 
         }
 
-        private static void insertPatient(Patient patient)
+        public void insertPatient(Patient patient)
         {
 
             myConnection.Open();
@@ -53,7 +61,7 @@ namespace MedicalInformationManagementSystem
             SqlCommand cmd = new SqlCommand("insert into Patient(registratonDate, lastName, giveMiddleName, dateOfBirth, gender) values(@reg_date,@pt_lName, @pt_fName,  @dob, @gender);");
             cmd.Connection = myConnection;
 
-            cmd.Parameters.AddWithValue("@reg_date", (DateTime.Now).ToString());
+            cmd.Parameters.AddWithValue("@reg_date", System.DateTime.Today.ToShortDateString());
             cmd.Parameters.AddWithValue("@pt_lName", patient.lastName);
             cmd.Parameters.AddWithValue("@pt_fName", patient.firstName);
             cmd.Parameters.AddWithValue("@dob", patient.dob);
@@ -231,7 +239,7 @@ namespace MedicalInformationManagementSystem
             }
         }
 
-        private int getAllergyIdfromAllergyTbl2()
+        public int getAllergyIdfromAllergyTbl2()
         {
             myConnection.Open();
             SqlCommand cmd = new SqlCommand("GetAllergyID2", myConnection);
@@ -263,21 +271,6 @@ namespace MedicalInformationManagementSystem
                 return doctorID;
 
             }
-        }
-
-        private int getDoctorIdfromDoctorTbl2()
-        {
-            myConnection.Open();
-            SqlCommand cmd = new SqlCommand("GetDoctorID2", myConnection);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            object returnVALUE = cmd.ExecuteScalar();
-
-            int a = int.Parse(returnVALUE.ToString());
-
-            cmd.ExecuteNonQuery();
-            myConnection.Close();
-            return a;
         }
 
         private static int  getPtIdfromPatienTbl()
@@ -360,7 +353,7 @@ namespace MedicalInformationManagementSystem
 
             //create new insurance
             Insurance insurance = new Insurance();
-            insurance.timestamp = (DateTime.Now).ToString();
+            insurance.timestamp = System.DateTime.Today.ToShortDateString();
             insurance.insNumber = txtInsuranceNumber.Text;
             insurance.versionCode = txtVersionCode.Text;
             insurance.expDate = txtInsuranceExpDate.Text;

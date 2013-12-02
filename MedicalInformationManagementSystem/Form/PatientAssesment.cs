@@ -8,24 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HealthInformaticSystem;
 
-namespace MedicalInformationManagementSystem
+namespace MedicalInformationManagementSystem.Forms
 {
     public partial class PatientAssesment : Form
     {
         public String PatientAssesmentPatientId;
         public int patid;
-        DataTable dtPatient = null;
-        Dictionary<String, String> dictionary = null;
-        DatabaseConnector dc = null;
-        String MyComboBox;
+       public  DataTable dtPatient = null;
+       public  Dictionary<String, String> dictionary = null;
+       public  DatabaseConnector dc = null;
+       public  String MyComboBox;
         public PatientAssesment()
         {
             InitializeComponent();
             
         }
 
-        private void PatientAssesment_Load(object sender, EventArgs e)
+        public void clearData()
         {
             label15.Text = "";
             label16.Text = "";
@@ -34,9 +35,20 @@ namespace MedicalInformationManagementSystem
             label19.Text = "";
             label20.Text = "";
             label21.Text = "";
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", PatientAssesmentPatientId);
-            dc = new DatabaseConnector();
+        }
+
+        public Dictionary<string, string> createGetPatientDictionary(string PatientAssesmentPatientId)
+        {
+            Dictionary<string, string>  dict = new Dictionary<string, string>();
+            dict.Add("@patientId", PatientAssesmentPatientId);
+            return dict;
+        }
+
+        private void PatientAssesment_Load(object sender, EventArgs e)
+        {
+            
+            DatabaseConnector dc = new DatabaseConnector();
+            dictionary = createGetPatientDictionary(PatientAssesmentPatientId);
             dtPatient = dc.getData("GetPatient", dictionary);
             label11.Text = dtPatient.Rows[0][0].ToString();
             label13.Text = dtPatient.Rows[0][1].ToString();
@@ -49,21 +61,32 @@ namespace MedicalInformationManagementSystem
 
            this.getPatientEMRDatesTableAdapter.Fill(dataSetGetEMRDatesIntoComboBox.GetPatientEMRDates, patid);
         }
+        public string formatDate(DateTime dt)
+        {
+            String str = dt.Year.ToString() + "/" + dt.Month + "/" + dt.Day;
+            return str;
+        }
+        public DataTable getPatientEMRAccordingToDate(Dictionary<String, String> dict, DatabaseConnector conn)
+        {
+            DataTable dataTable;
+            dataTable= conn.getData("GetPatientEMRAccordingToDate", dict);
+            return dataTable;
+        }
+
+        public Dictionary<String, String> createEmrRequest(String patientAssementId, String emrDate)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@patientId", patientAssementId);
+            dic.Add("@emrDate", emrDate);
+            return dic;
+        }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-
-            string sourceDateText =  cmbEMRDates.Text;
-           DateTime dt = Convert.ToDateTime(sourceDateText);
-           sourceDateText = dt.Year.ToString() +"/"+ dt.Month + "/"+ dt.Day;
-           MyComboBox = sourceDateText;
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", PatientAssesmentPatientId);
-            
-
-            dictionary.Add("@emrDate", MyComboBox);
+            dictionary = createEmrRequest(PatientAssesmentPatientId,formatDate(Convert.ToDateTime(cmbEMRDates.Text)));
             dc = new DatabaseConnector();
-            dtPatient = dc.getData("GetPatientEMRAccordingToDate", dictionary);
+            dtPatient = getPatientEMRAccordingToDate(dictionary,dc);
+            
             textBox1.Text = dtPatient.Rows[0][3].ToString();
             label20.Text = dtPatient.Rows[0][4].ToString() +" mmhg";
             label19.Text = dtPatient.Rows[0][5].ToString()+ " per minute";

@@ -1,7 +1,5 @@
-﻿using MedicalInformationManagementSystem.DataSet;
-using MedicalInformationManagementSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters;
-
-namespace MedicalInformationManagementSystem
+﻿using HealthInformaticSystem.DataSet;
+namespace MedicalInformationManagementSystem.Forms
 {
     partial class PatientAssesment
     {
@@ -47,12 +45,19 @@ namespace MedicalInformationManagementSystem
             this.label2 = new System.Windows.Forms.Label();
             this.txt_cheifcomplaint = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lbl_W = new System.Windows.Forms.Label();
             this.lbl_H = new System.Windows.Forms.Label();
             this.lbl_T = new System.Windows.Forms.Label();
             this.lbl_PS = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.lbl_P = new System.Windows.Forms.Label();
             this.lbl_R = new System.Windows.Forms.Label();
             this.lbl_Bp = new System.Windows.Forms.Label();
@@ -60,26 +65,21 @@ namespace MedicalInformationManagementSystem
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbEMRDates = new System.Windows.Forms.ComboBox();
-            this.dataSetGetEMRDatesIntoComboBox = new DataSetGetEMRDatesIntoComboBox();
             this.getPatientEMRDatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getPatientEMRDatesTableAdapter = new GetPatientEMRDatesTableAdapter();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.dataSetGetEMRDatesIntoComboBox = new HealthInformaticSystem.DataSet.DataSetGetEMRDatesIntoComboBox();
+            this.getPatientEMRDatesTableAdapter = new HealthInformaticSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dataSetPrintLatestEmr1 = new HealthInformaticSystem.DataSet.DataSetPrintLatestEmr();
             this.PatientDetails.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetGetEMRDatesIntoComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientEMRDatesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGetEMRDatesIntoComboBox)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrintLatestEmr1)).BeginInit();
             this.SuspendLayout();
             // 
             // PatientDetails
@@ -247,6 +247,46 @@ namespace MedicalInformationManagementSystem
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Body Details";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(99, 120);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 13);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "label21";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(77, 91);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "label15";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(75, 57);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "label16";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(109, 24);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "label18";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -308,6 +348,36 @@ namespace MedicalInformationManagementSystem
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Heart Details";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(108, 104);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "label17";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(133, 66);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 13);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "label19";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(133, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "label20";
             // 
             // lbl_P
             // 
@@ -380,89 +450,19 @@ namespace MedicalInformationManagementSystem
             this.cmbEMRDates.TabIndex = 14;
             this.cmbEMRDates.ValueMember = "timestamp";
             // 
-            // dataSetGetEMRDatesIntoComboBox
-            // 
-            this.dataSetGetEMRDatesIntoComboBox.DataSetName = "DataSetGetEMRDatesIntoComboBox";
-            this.dataSetGetEMRDatesIntoComboBox.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // getPatientEMRDatesBindingSource
             // 
             this.getPatientEMRDatesBindingSource.DataMember = "GetPatientEMRDates";
             this.getPatientEMRDatesBindingSource.DataSource = this.dataSetGetEMRDatesIntoComboBox;
             // 
+            // dataSetGetEMRDatesIntoComboBox
+            // 
+            this.dataSetGetEMRDatesIntoComboBox.DataSetName = "DataSetGetEMRDatesIntoComboBox";
+            this.dataSetGetEMRDatesIntoComboBox.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // getPatientEMRDatesTableAdapter
             // 
             this.getPatientEMRDatesTableAdapter.ClearBeforeFill = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(133, 24);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "label20";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(133, 66);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
-            this.label19.TabIndex = 17;
-            this.label19.Text = "label19";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(108, 104);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "label17";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(109, 24);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "label18";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(75, 57);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "label16";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(77, 91);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "label15";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(99, 120);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 13);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "label21";
             // 
             // groupBox4
             // 
@@ -486,6 +486,11 @@ namespace MedicalInformationManagementSystem
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Clinical Impression";
             // 
+            // dataSetPrintLatestEmr1
+            // 
+            this.dataSetPrintLatestEmr1.DataSetName = "DataSetPrintLatestEmr";
+            this.dataSetPrintLatestEmr1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // PatientAssesment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,12 +512,13 @@ namespace MedicalInformationManagementSystem
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetGetEMRDatesIntoComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientEMRDatesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGetEMRDatesIntoComboBox)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPrintLatestEmr1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,7 +555,7 @@ namespace MedicalInformationManagementSystem
         private System.Windows.Forms.ComboBox cmbEMRDates;
         private System.Windows.Forms.BindingSource getPatientEMRDatesBindingSource;
         private DataSetGetEMRDatesIntoComboBox dataSetGetEMRDatesIntoComboBox;
-        private GetPatientEMRDatesTableAdapter getPatientEMRDatesTableAdapter;
+        private HealthInformaticSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter getPatientEMRDatesTableAdapter;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
@@ -559,5 +565,6 @@ namespace MedicalInformationManagementSystem
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
+        private DataSetPrintLatestEmr dataSetPrintLatestEmr1;
     }
 }

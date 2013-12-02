@@ -1,4 +1,4 @@
-﻿namespace MedicalInformationManagementSystem
+﻿namespace MIMS
 {
     partial class UpdatePatientDemography
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdatePatientDemography));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.patDob = new System.Windows.Forms.TextBox();
@@ -501,9 +502,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
             this.label2.Location = new System.Drawing.Point(4, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 17);
+            this.label2.Size = new System.Drawing.Size(130, 17);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Referral Doctor:";
+            this.label2.Text = "Referral Doctor ID:";
             // 
             // label3
             // 
@@ -640,7 +641,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(981, 567);
+            this.ClientSize = new System.Drawing.Size(966, 552);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.BtnEditDemo);
@@ -651,6 +652,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.DarkBlue;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdatePatientDemography";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Patient Demographic";

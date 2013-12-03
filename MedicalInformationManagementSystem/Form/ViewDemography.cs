@@ -8,9 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HealthInformaticSystem;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using MIMS;
 
 namespace MedicalInformationManagementSystem
 {
@@ -26,13 +27,13 @@ namespace MedicalInformationManagementSystem
         DataTable dtPatientPhone = null;
         DataTable dtInsurance = null;
         DatabaseConnector dc = null;
-        string name ,id,dob,sex,hc,address,phone ;
+        string name, id, dob, sex, hc, address, phone;
 
         public ViewDemography()
         {
             InitializeComponent();
             lblBillingCode.Visible = true;
-           
+
         }
 
         public int try1()
@@ -117,7 +118,7 @@ namespace MedicalInformationManagementSystem
 
 
 
-     
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -131,22 +132,28 @@ namespace MedicalInformationManagementSystem
         private void lblFirstName_TextChanged(object sender, EventArgs e)
         {
             //lblFirstName.Visible = true;
-            
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+
             UpdatePatientDemography update = new UpdatePatientDemography();
             update.patientId = this.patientId;
-            
+
             update.Show();
+        }
+
+        public Dictionary<String, String> createDictionary(String patientId)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@patientId", patientId);
+            return dic;
         }
 
         private void ViewDemography_Load(object sender, EventArgs e)
         {
-            dictionary = new Dictionary<string, string>();
-            dictionary.Add("@patientId", patientId.ToString());
+            dictionary = createDictionary(patientId.ToString());
 
             dc = new DatabaseConnector();
 
@@ -162,7 +169,7 @@ namespace MedicalInformationManagementSystem
             lblFirstName.Text = dtPatient.Rows[0][3].ToString();
             string dob = dtPatient.Rows[0][4].ToString();
             DateTime dt = Convert.ToDateTime(dob);
-            dob = dt.Year.ToString() + "-" + dt.Month + "-" + dt.Day;
+            dob = dt.Year.ToString() + "/" + dt.Month + "/" + dt.Day;
             lblDOB.Text = dob;
             lblGender.Text = dtPatient.Rows[0][5].ToString();
             lblPatientID.Text = patientId.ToString();
@@ -172,7 +179,7 @@ namespace MedicalInformationManagementSystem
             {
                 lblReferralDoctor.Text = dtReferenceDoctor.Rows[0][2].ToString();
                 lblBillingCode.Text = dtReferenceDoctor.Rows[0][1].ToString();
-               
+
             }
 
             if (try2() != 0)
@@ -180,7 +187,7 @@ namespace MedicalInformationManagementSystem
 
                 lblAllergyName.Text = dtAllergy.Rows[0][1].ToString();
                 lblAllergyCategory.Text = dtAllergy.Rows[0][2].ToString();
-                
+
             }
 
             lblInsNo.Text = dtInsurance.Rows[0][2].ToString() + " " + dtInsurance.Rows[0][3].ToString();
@@ -188,7 +195,7 @@ namespace MedicalInformationManagementSystem
 
             string date = dtInsurance.Rows[0][4].ToString();
             DateTime edt = Convert.ToDateTime(date);
-            date = edt.Year.ToString() + "-" + edt.Month + "-" + edt.Day;
+            date = edt.Year.ToString() + "/" + edt.Month + "/" + edt.Day;
             lblExpDate.Text = date;
 
             if (try3() != 0)
@@ -198,60 +205,60 @@ namespace MedicalInformationManagementSystem
                 lblCity.Text = dtPatientAddress.Rows[0][4].ToString();
                 lblProvince.Text = dtPatientAddress.Rows[0][5].ToString();
                 lblPostalCode.Text = dtPatientAddress.Rows[0][6].ToString();
-                
+
 
             }
 
-         if (try4() != 0)
-           {
+            if (try4() != 0)
+            {
                 lblPhone.Text = dtPatientPhone.Rows[0][3].ToString();
                 lblPhoneType.Text = dtPatientPhone.Rows[0][2].ToString();
 
-           }
+            }
 
 
             if (try5() != 0)
             {
                 lblEmailType.Text = dtPatientEmail.Rows[0][2].ToString();
                 lblEmail.Text = dtPatientEmail.Rows[0][3].ToString();
-                
+
             }
-            
+
         }
 
-        
+
 
         private void btnViewEMR_Click(object sender, EventArgs e)
         {
-           
-                ViewPatientEMR view = new ViewPatientEMR();
-                view.viewEMRPatientId =  this.patientId.ToString();
 
-                view.Show();
-           
+            ViewPatientEMR view = new ViewPatientEMR();
+            view.viewEMRPatientId = this.patientId.ToString();
+
+            view.Show();
+
         }
 
         private void btnPrintLabel_Click(object sender, EventArgs e)
-        { 
+        {
             BaseFont bfTimes = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
 
             iTextSharp.text.Font times = new iTextSharp.text.Font(bfTimes, 9);
 
             var pgSize = new iTextSharp.text.Rectangle(300, 100);
-            var doc = new iTextSharp.text.Document(pgSize, 10, 5, 5,0 );
-           
+            var doc = new iTextSharp.text.Document(pgSize, 10, 5, 5, 0);
+
             PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Label.pdf", FileMode.Create));
 
-             name = lblLastName.Text+ ", " +lblFirstName.Text  ;
-             id = " (" + patientId + ")";
-             dob = "\nD.O.B: " + lblDOB.Text;
-             sex = "  Sex: " + lblGender.Text;
-             hc = "\nHCN: " + lblInsNo.Text;
-             address = "\nAddress: " + lblAddress.Text.ToUpper() + "\n" + lblCity.Text.ToUpper() + ", " + lblProvince.Text.ToUpper() + ", "+ lblPostalCode.Text.ToUpper();
-             phone = "\nPhone Number: " + lblPhone.Text; 
+            name = lblLastName.Text + ", " + lblFirstName.Text;
+            id = " (" + patientId + ")";
+            dob = "\nD.O.B: " + lblDOB.Text;
+            sex = "  Sex: " + lblGender.Text;
+            hc = "\nHCN: " + lblInsNo.Text;
+            address = "\nAddress: " + lblAddress.Text.ToUpper() + "\n" + lblCity.Text.ToUpper() + ", " + lblProvince.Text.ToUpper() + ", " + lblPostalCode.Text.ToUpper();
+            phone = "\nPhone Number: " + lblPhone.Text;
 
-            string par = name + id + dob + sex + hc + address + phone  ;
-            Paragraph paragraph = new Paragraph (par, times);
+            string par = name + id + dob + sex + hc + address + phone;
+            Paragraph paragraph = new Paragraph(par, times);
             doc.Open();
             doc.Add(paragraph);
 
@@ -278,7 +285,7 @@ namespace MedicalInformationManagementSystem
 
 
             string par1 = lblLastName.Text.ToUpper() + ", " + lblFirstName.Text.ToUpper() + "\n" + "D.O.B: " + lblDOB.Text + " OHIP: " + lblInsNo.Text + "\n" + lblAddress.Text.ToUpper() + "\n" +
-                lblCity.Text.ToUpper() + ", " + lblProvince.Text.ToUpper() + ", "+ lblPostalCode.Text.ToUpper() + "\n" + lblPhone.Text              ;
+                lblCity.Text.ToUpper() + ", " + lblProvince.Text.ToUpper() + ", " + lblPostalCode.Text.ToUpper() + "\n" + lblPhone.Text;
             Paragraph paragraph1 = new Paragraph(par1, times);
 
             string par2 = "Dr.____\nBONIFACE PARK MEDICAL CENTER\n141 PROGRESS AVENUE\nSCARBOROUGH, ON, M1C 5K9\n647-686-1193 ";
@@ -323,6 +330,13 @@ namespace MedicalInformationManagementSystem
 
         }
 
-       
+        private void btnExpPt_Click(object sender, EventArgs e)
+        {
+            AddtoDoctorList a = new AddtoDoctorList();
+            a.patientID = this.patientId;
+            a.Show();
+        }
+
+
     }
 }

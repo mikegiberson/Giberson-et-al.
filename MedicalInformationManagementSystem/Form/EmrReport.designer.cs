@@ -1,4 +1,4 @@
-﻿using HealthInformaticSystem.DataSet;
+﻿using MedicalInformationManagementSystem.DataSet;
 namespace MedicalInformationManagementSystem
 {
     partial class EmrReport
@@ -57,7 +57,7 @@ namespace MedicalInformationManagementSystem
             reportDataSource2.Name = "PrintablePatientEmrReport";
             reportDataSource2.Value = this.getPatientLatestEmrReportBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "HealthInformaticSystem.Reports.Report1.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "MedicalInformationManagementSystem.Reports.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(845, 436);
@@ -105,7 +105,7 @@ namespace MedicalInformationManagementSystem
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource getPatientLatestEmrReportBindingSource;
-        private DataSetPrintLatestEmr dataSetPrintLatestEmr;
+        private HealthInformaticSystem.DataSet.DataSetPrintLatestEmr dataSetPrintLatestEmr;
         private HealthInformaticSystem.DataSet.DataSetPrintLatestEmrTableAdapters.GetPatientLatestEmrReportTableAdapter getPatientLatestEmrReportTableAdapter;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;

@@ -8,9 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HealthInformaticSystem;
 
-namespace MedicalInformationManagementSystem.Forms
+namespace MedicalInformationManagementSystem
 {
     public partial class PatientAssesment : Form
     {

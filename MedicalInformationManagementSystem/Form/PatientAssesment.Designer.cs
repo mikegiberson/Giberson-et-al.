@@ -1,5 +1,4 @@
-﻿using HealthInformaticSystem.DataSet;
-namespace MedicalInformationManagementSystem.Forms
+﻿namespace MedicalInformationManagementSystem
 {
     partial class PatientAssesment
     {
@@ -495,7 +494,7 @@ namespace MedicalInformationManagementSystem.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 456);
+            this.ClientSize = new System.Drawing.Size(943, 456);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -554,7 +553,7 @@ namespace MedicalInformationManagementSystem.Forms
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cmbEMRDates;
         private System.Windows.Forms.BindingSource getPatientEMRDatesBindingSource;
-        private DataSetGetEMRDatesIntoComboBox dataSetGetEMRDatesIntoComboBox;
+        private HealthInformaticSystem.DataSet.DataSetGetEMRDatesIntoComboBox dataSetGetEMRDatesIntoComboBox;
         private HealthInformaticSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter getPatientEMRDatesTableAdapter;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
@@ -565,6 +564,6 @@ namespace MedicalInformationManagementSystem.Forms
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private DataSetPrintLatestEmr dataSetPrintLatestEmr1;
+        private HealthInformaticSystem.DataSet.DataSetPrintLatestEmr dataSetPrintLatestEmr1;
     }
 }

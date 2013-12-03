@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MedicalInformationManagementSystem
 {
-    class DatabaseConnector
+    public class DatabaseConnector
     {
         private SqlConnection conn;
         

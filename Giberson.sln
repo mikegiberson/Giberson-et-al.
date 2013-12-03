@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalInformationManagementSystem", "MedicalInformationManagementSystem\MedicalInformationManagementSystem.csproj", "{0F32FEF0-BDAB-4CA5-912C-71FB8CFE3AE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "MedicalInformationManagementSystem\UnitTestProject\UnitTestProject.csproj", "{6DF94CFF-6178-46A0-8B91-4FC9883ED9E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject1\UnitTestProject.csproj", "{6DF94CFF-6178-46A0-8B91-4FC9883ED9E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

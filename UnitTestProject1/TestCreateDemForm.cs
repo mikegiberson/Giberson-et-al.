@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MedicalInformationManagementSystem.Forms;
 using System.Windows.Input;
 using System.Data;
 
@@ -11,10 +10,9 @@ using System.Linq;
 using MedicalInformationManagementSystem;
 using System.Text;
 using System.Threading.Tasks;
-using HealthInformaticSystem.Class_Library;
 
 using System.Text.RegularExpressions;
-using HealthInformaticSystem;
+
 namespace UnitTestProject1
 {
     [TestClass]
@@ -23,7 +21,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void testCreateDemFormCreate()
         {
-            MIMS.CreateDemForm a = new MIMS.CreateDemForm();
+            CreateDemForm a = new CreateDemForm();
             Assert.IsNotNull(a);
         }
 

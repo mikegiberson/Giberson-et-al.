@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MedicalInformationManagementSystem;
-using MIMS;
-using MedicalInformationManagementSystem.Forms;
 using System.Windows.Input;
 using System.Data;
 using System.Collections.Generic;

@@ -9,23 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
-
-using HealthInformaticSystem;
 using System.Globalization;
-using HealthInformaticSystem.Class_Library;
-using MedicalInformationManagementSystem;
 
-
-
-
-
-namespace MIMS
+namespace MedicalInformationManagementSystem
 {
     public partial class CreateDemForm : Form
     {
 
-
-        private static SqlConnection myConnection =  new SqlConnection(HealthInformaticSystem.Properties.Settings.Default.GibersonConnectionString);
+        private static SqlConnection myConnection =  new SqlConnection(MedicalInformationManagementSystem.Properties.Settings.Default.GibersonConnectionString);
 
         DataTable dtInsurance = null;
         DataTable dtAllergy = null;
@@ -36,8 +27,6 @@ namespace MIMS
         public CreateDemForm()
         {
             InitializeComponent(); 
-           
-                              
            
             cmbxGender.Text = "Male";
             cmbxInsuranceType.Text = "OHIP";

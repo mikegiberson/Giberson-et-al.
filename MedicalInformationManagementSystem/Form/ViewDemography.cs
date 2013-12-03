@@ -8,10 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HealthInformaticSystem;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using MIMS;
+
 
 namespace MedicalInformationManagementSystem
 {

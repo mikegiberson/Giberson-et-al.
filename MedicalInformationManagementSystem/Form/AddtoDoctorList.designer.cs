@@ -1,4 +1,4 @@
-﻿namespace HealthInformaticSystem
+﻿namespace MedicalInformationManagementSystem
 {
     partial class AddtoDoctorList
     {

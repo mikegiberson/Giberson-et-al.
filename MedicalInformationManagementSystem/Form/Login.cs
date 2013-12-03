@@ -12,60 +12,34 @@ namespace MedicalInformationManagementSystem
 {
     public partial class Login : Form
     {
-        private Front Front;
-        private Encrypt Encryption = new Encrypt();
-
-        private DatabaseConnector dc;
-        private Dictionary<String, String> dictionary;
+        Front front;
+        User user;
         
-        private DataTable dtEmployee;
-        
-        public Login(Front f)
+        public Login(Front f, User u)
         {
-            Front = f;
             InitializeComponent();
+
+            front = f;
+            user = u;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String username = txtUserName.Text;
-            String password = Encryption.MD5(txtPassword.Text);
-
-            if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(txtPassword.Text))
+            try
             {
-                dictionary = new Dictionary<string, string>();
-                dictionary.Add("@userName", username);
+                String UserName = txtUser.Text;
+                String Password = txtPass.Text;
 
-                dc = new DatabaseConnector();
-                dtEmployee = dc.getData("ReadEmployeeByName", dictionary);
-
-                if (dtEmployee.Rows.Count == 1)
+                user.Login(UserName, Password);
+                if (User.ID != null)
                 {
-                    verifyEmployee(username, password);
-                }
-                else
-                {
-                    MessageBox.Show("Multiple user with same userName");
+                    front.setRole();
+                    this.Dispose();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Some field(s) were left blank.");
-            }
-        }
-
-        public void verifyEmployee(String username, String password)
-        {
-            if (String.Equals(dtEmployee.Rows[0]["password"].ToString(), password))
-            {
-                Front.employeeID = int.Parse(dtEmployee.Rows[0]["employeeID"].ToString());
-                Front.userName = dtEmployee.Rows[0]["password"].ToString();
-                Front.role = dtEmployee.Rows[0]["role"].ToString();
-                Front.Login();
-            }
-            else
-            {
-                MessageBox.Show("Invalid Password");
+                MessageBox.Show(ex.ToString());
             }
         }
     }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     public partial class ScheduleList : Form
     {

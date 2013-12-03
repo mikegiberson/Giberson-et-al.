@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSetPrintLatestEmr" targetNamespace="http://tempuri.org/DataSetPrintLatestEmr.xsd" xmlns:mstns="http://tempuri.org/DataSetPrintLatestEmr.xsd" xmlns="http://tempuri.org/DataSetPrintLatestEmr.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataSetViewAndPrintPatientEmr" targetNamespace="http://tempuri.org/DataSetViewAndPrintPatientEmr.xsd" xmlns:mstns="http://tempuri.org/DataSetViewAndPrintPatientEmr.xsd" xmlns="http://tempuri.org/DataSetViewAndPrintPatientEmr.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GibersonConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GibersonConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HealthInformaticSystem.Properties.Settings.GlobalReference.Default.GibersonConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GibersonConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GibersonConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MedicalInformationManagementSystem.Properties.Settings.GlobalReference.Default.GibersonConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetPatientLatestEmrReportTableAdapter" GeneratorDataComponentClassName="GetPatientLatestEmrReportTableAdapter" Name="GetPatientLatestEmrReport" UserDataComponentName="GetPatientLatestEmrReportTableAdapter">
@@ -55,10 +55,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetPrintLatestEmr" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetPrintLatestEmr" msprop:Generator_UserDSName="DataSetPrintLatestEmr">
+  <xs:element name="DataSetViewAndPrintPatientEmr" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetViewAndPrintPatientEmr" msprop:Generator_UserDSName="DataSetViewAndPrintPatientEmr">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="GetPatientLatestEmrReport" msprop:Generator_TableClassName="GetPatientLatestEmrReportDataTable" msprop:Generator_TableVarName="tableGetPatientLatestEmrReport" msprop:Generator_TablePropName="GetPatientLatestEmrReport" msprop:Generator_RowDeletingName="GetPatientLatestEmrReportRowDeleting" msprop:Generator_RowChangingName="GetPatientLatestEmrReportRowChanging" msprop:Generator_RowEvHandlerName="GetPatientLatestEmrReportRowChangeEventHandler" msprop:Generator_RowDeletedName="GetPatientLatestEmrReportRowDeleted" msprop:Generator_UserTableName="GetPatientLatestEmrReport" msprop:Generator_RowChangedName="GetPatientLatestEmrReportRowChanged" msprop:Generator_RowEvArgName="GetPatientLatestEmrReportRowChangeEvent" msprop:Generator_RowClassName="GetPatientLatestEmrReportRow">
+        <xs:element name="GetPatientLatestEmrReport" msprop:Generator_TableClassName="GetPatientLatestEmrReportDataTable" msprop:Generator_TableVarName="tableGetPatientLatestEmrReport" msprop:Generator_RowChangedName="GetPatientLatestEmrReportRowChanged" msprop:Generator_TablePropName="GetPatientLatestEmrReport" msprop:Generator_RowDeletingName="GetPatientLatestEmrReportRowDeleting" msprop:Generator_RowChangingName="GetPatientLatestEmrReportRowChanging" msprop:Generator_RowEvHandlerName="GetPatientLatestEmrReportRowChangeEventHandler" msprop:Generator_RowDeletedName="GetPatientLatestEmrReportRowDeleted" msprop:Generator_RowClassName="GetPatientLatestEmrReportRow" msprop:Generator_UserTableName="GetPatientLatestEmrReport" msprop:Generator_RowEvArgName="GetPatientLatestEmrReportRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PatientID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnPatientID" msprop:Generator_ColumnPropNameInRow="PatientID" msprop:Generator_ColumnPropNameInTable="PatientIDColumn" msprop:Generator_UserColumnName="PatientID" type="xs:int" />

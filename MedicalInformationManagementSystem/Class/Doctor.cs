@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalInformationManagementSystem.Class
+namespace MedicalInformationManagementSystem
 {
-    class Doctor
+    public class Doctor
     {
         private string _billingCode;
         private string _name;

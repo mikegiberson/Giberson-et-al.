@@ -7,85 +7,85 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalInformationManagementSystem.Class
+namespace MedicalInformationManagementSystem
 {
-    class Patient
+    public class Patient
     {
-         private int _patientID;
-    private String _firstName;
-    private String _lastName;
-    private String _dob;
-    private String _gender;
+        private int _patientID;
+        private String _firstName;
+        private String _lastName;
+        private String _dob;
+        private String _gender;
    
-    public Patient()
-    {
- 
-    }
- 
-    public int patientID
-    {
-        get
+        public Patient()
         {
-            return _patientID;
+ 
         }
  
-        set
+        public int patientID
         {
-            _patientID = value;
-        }
-    }
-
-    public String firstName
-    {
-        get
-        {
-            return _firstName;
+            get
+            {
+                return _patientID;
+            }
+ 
+            set
+            {
+                _patientID = value;
+            }
         }
 
-        set
+        public String firstName
         {
-            _firstName = value;
-        }
-    }
- 
-    public String lastName
-    {
-        get
-        {
-            return _lastName;
-        }
- 
-        set
-        {
-            _lastName = value;
-        }
-    }
- 
-    public String dob
-    {
-        get
-        {
-            return _dob;
-        }
- 
-        set
-        {
-            _dob = value;
-        }
-    }
+            get
+            {
+                return _firstName;
+            }
 
-    public String gender
-    {
-        get
+            set
+            {
+                _firstName = value;
+            }
+        }
+ 
+        public String lastName
         {
-            return _gender;
+            get
+            {
+                return _lastName;
+            }
+ 
+            set
+            {
+                _lastName = value;
+            }
+        }
+ 
+        public String dob
+        {
+            get
+            {
+                return _dob;
+            }
+ 
+            set
+            {
+                _dob = value;
+            }
         }
 
-        set
+        public String gender
         {
-            _gender = value;
+            get
+            {
+                return _gender;
+            }
+
+            set
+            {
+                _gender = value;
+            }
         }
-    }
 
    
     }

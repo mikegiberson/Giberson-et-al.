@@ -1,4 +1,4 @@
-﻿using MIMS;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using MedicalInformationManagementSystem.Forms;
+
 using System.Text.RegularExpressions;
 using HealthInformaticSystem;
 
@@ -27,7 +27,7 @@ namespace MedicalInformationManagementSystem
         DataTable dtDoctorID =  null;
         public String _mySearchId;
         public int doctorID;
-       
+        string today = System.DateTime.Today.ToShortDateString();
 
         public SearchPatient()
         {
@@ -35,11 +35,11 @@ namespace MedicalInformationManagementSystem
 
             AddtoDoctorList a = new AddtoDoctorList();
             a.dc = new DatabaseConnector();
-            dictionary2 = a.createDoctorNameDictionary(System.DateTime.Today.ToShortDateString());
+            dictionary2 = a.createDoctorNameDictionary(today);
             dtDoctorName = a.createGetDoctorName(dictionary2);
             for (int i = 0; i < dtDoctorName.Rows.Count; i++)
                 comboBox1.Items.Add(dtDoctorName.Rows[i][0].ToString());
-           
+            ;
                                  
         }
 
@@ -103,7 +103,11 @@ namespace MedicalInformationManagementSystem
         }
 
 
-       
+        public DataTable createDailyReport(Dictionary<String, String> dic)
+        {
+            DataTable dTab = dc.getData("GetDailyPatientsReport", dic);
+            return dTab;
+        }
 
 
 
@@ -161,6 +165,12 @@ namespace MedicalInformationManagementSystem
             dic.Add("@patientId", selectedDate);
             return dic;
         }
+        public Dictionary<String, String> createDailyReportDictionary(String selectedDate)
+        {
+            Dictionary<String, String> dic = new Dictionary<string, string>();
+            dic.Add("@todays", selectedDate);
+            return dic;
+        }
         
         public DataTable checkDailyReportExists(Dictionary<String, String> dic)
         {
@@ -176,14 +186,17 @@ namespace MedicalInformationManagementSystem
             dtReport = checkDailyReportExists(dictionary);
             if (int.Parse(dtReport.Rows[0][0].ToString()) > 0)
             {
+                dictionary = createDailyReportDictionary(todaysDate);
+                dc = new DatabaseConnector();
+                dtReport = createDailyReport(dictionary);
                 DailyPatientReports dailyReport = new DailyPatientReports();
                 dailyReport.myDate = todaysDate;
                 dailyReport.Show();
-               
+
             }
             else
             {
-                MessageBox.Show("No Patient was treated on "+ todaysDate +"\n Report do not exist!");
+                MessageBox.Show("No Patient was treated on " + todaysDate + "\n Report do not exist!");
             }
             
           
@@ -214,5 +227,7 @@ namespace MedicalInformationManagementSystem
                 s.Show();
             }
         }
+
+        
     }
 }

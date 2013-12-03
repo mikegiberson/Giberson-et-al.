@@ -7,22 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HealthInformaticSystem;
-using HealthInformaticSystem.DataSet;
-using MedicalInformationManagementSystem.Forms;
-
 
 namespace MedicalInformationManagementSystem
 {
     public partial class ViewPatientEMR : Form
-    {
-       
+    {       
         public String viewEMRPatientId;
         public int patId ;
         public Int16 sortby = 1;
         DataTable dtPatient = null;
         Dictionary<String, String> dictionary = null;
         DatabaseConnector dc = null;
+
         public ViewPatientEMR()
         {
             InitializeComponent();
@@ -74,7 +70,7 @@ namespace MedicalInformationManagementSystem
        
         private void button5_Click(object sender, EventArgs e)
         {
-           MedicalInformationManagementSystem.Forms.PatientAssesment h=new MedicalInformationManagementSystem.Forms.PatientAssesment();
+           PatientAssesment h = new PatientAssesment();
            h.PatientAssesmentPatientId = viewEMRPatientId;
            h.Show();
           

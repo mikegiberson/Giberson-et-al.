@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalInformationManagementSystem.Class
+namespace MedicalInformationManagementSystem
 {
-    class Insurance
+    public class Insurance
     {
         
         private int _patientId;

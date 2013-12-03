@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MedicalInformationManagementSystem;
-using MIMS;
-using MedicalInformationManagementSystem.Forms;
 using System.Windows.Input;
 using System.Data;
 using System.Collections.Generic;
@@ -22,14 +20,14 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            HealthInformaticSystem.ScheduleList s = new HealthInformaticSystem.ScheduleList();
+            ScheduleList s = new ScheduleList();
             Assert.IsNotNull(s);
         }
 
         [TestMethod]
         public void TestCreateDoctorDayScheduleDictionary()
         {
-            HealthInformaticSystem.ScheduleList s = new HealthInformaticSystem.ScheduleList();
+            ScheduleList s = new ScheduleList();
             Assert.IsNotNull(s);
             Dictionary<String, String> dic;
             string date = "12/2/2013";

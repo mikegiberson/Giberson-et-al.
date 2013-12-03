@@ -47,7 +47,7 @@
       <HintPath>..\Assemblies\itextsharp.xtra.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
@@ -69,12 +69,14 @@
     <Compile Include="Class\Allergy.cs" />
     <Compile Include="Class\Doctor.cs" />
     <Compile Include="Class\Email.cs" />
+    <Compile Include="Class\Employees.cs" />
     <Compile Include="Class\Encrypt.cs" />
     <Compile Include="Class\Insurance.cs" />
     <Compile Include="Class\Patient.cs" />
     <Compile Include="Class\PatientAllergy.cs" />
     <Compile Include="Class\Phone.cs" />
     <Compile Include="Class\ReferralDoctor.cs" />
+    <Compile Include="Class\User.cs" />
     <Compile Include="DataSet\DailyReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +115,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddEmployee.designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AddtoDoctorList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +145,12 @@
     <Compile Include="Form\DoctorSchedule.Designer.cs">
       <DependentUpon>DoctorSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EditEmployee.designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\EmrReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,14 +160,20 @@
     <Compile Include="Form\Front.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Front.Designer.cs">
+    <Compile Include="Form\Front.designer.cs">
       <DependentUpon>Front.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Login.Designer.cs">
+    <Compile Include="Form\Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ManageEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ManageEmployees.designer.cs">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\PatientAssesment.cs">
       <SubType>Form</SubType>
@@ -198,6 +218,9 @@
     <Compile Include="Form\ManageStaff.Designer.cs">
       <DependentUpon>ManageStaff.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\AddtoDoctorList.resx">
       <DependentUpon>AddtoDoctorList.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +233,9 @@
     <EmbeddedResource Include="Form\DoctorSchedule.resx">
       <DependentUpon>DoctorSchedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\EmrReport.resx">
       <DependentUpon>EmrReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ManageEmployees.resx">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ManageStaff.resx">
       <DependentUpon>ManageStaff.cs</DependentUpon>

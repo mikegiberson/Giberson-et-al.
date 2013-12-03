@@ -537,6 +537,11 @@ namespace MedicalInformationManagementSystem
 
         }
 
+        private void CreateDemForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

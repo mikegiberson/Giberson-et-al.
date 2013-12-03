@@ -67,6 +67,7 @@
     <Compile Include="TestPatientAssesment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestAddDoctorList.cs" />
+    <Compile Include="TestSearchPatient.cs" />
     <Compile Include="TestUpdatePatientDemography.cs" />
     <Compile Include="TestViewPatientEmr.cs" />
     <Compile Include="TestCreateDemForm.cs" />

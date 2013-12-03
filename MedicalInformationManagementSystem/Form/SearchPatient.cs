@@ -39,7 +39,7 @@ namespace MedicalInformationManagementSystem
             dtDoctorName = a.createGetDoctorName(dictionary2);
             for (int i = 0; i < dtDoctorName.Rows.Count; i++)
                 comboBox1.Items.Add(dtDoctorName.Rows[i][0].ToString());
-            label1.Text = System.DateTime.Today.ToShortDateString();
+            ;
                                  
         }
 

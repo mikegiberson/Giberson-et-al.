@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyPatientReports));
             this.getDailyPatientsReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dailyReportDataSet = new HealthInformaticSystem.DataSet.DailyReportDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -54,7 +55,7 @@
             reportDataSource1.Name = "DailyReportDataSet";
             reportDataSource1.Value = this.getDailyPatientsReportBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "MedicalInformationManagementSystem.Reports.Report3.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "HealthInformaticSystem.Reports.Report3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(699, 397);
@@ -70,6 +71,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 397);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DailyPatientReports";
             this.Text = "DailyPatientReports";
             this.Load += new System.EventHandler(this.DailyPatientReports_Load);

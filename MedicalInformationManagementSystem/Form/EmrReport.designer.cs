@@ -30,7 +30,8 @@ namespace MedicalInformationManagementSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmrReport));
             this.getPatientLatestEmrReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetPrintLatestEmr = new HealthInformaticSystem.DataSet.DataSetPrintLatestEmr();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -54,9 +55,9 @@ namespace MedicalInformationManagementSystem
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "PrintablePatientEmrReport";
-            reportDataSource2.Value = this.getPatientLatestEmrReportBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "PrintablePatientEmrReport";
+            reportDataSource1.Value = this.getPatientLatestEmrReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MedicalInformationManagementSystem.Reports.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -92,6 +93,7 @@ namespace MedicalInformationManagementSystem
             this.ClientSize = new System.Drawing.Size(845, 436);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmrReport";
             this.Text = "EmrReport";
             this.Load += new System.EventHandler(this.EmrReport_Load);

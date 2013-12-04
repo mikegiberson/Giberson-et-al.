@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleList));
             this.label1 = new System.Windows.Forms.Label();
             this.lblDoctorName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,12 +88,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(574, 317);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblDoctorID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDoctorName);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ScheduleList";
             this.Text = "ScheduleList";
             this.Load += new System.EventHandler(this.ScheduleList_Load);

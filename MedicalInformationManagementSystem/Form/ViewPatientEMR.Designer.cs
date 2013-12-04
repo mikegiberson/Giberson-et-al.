@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPatientEMR));
             this.label1 = new System.Windows.Forms.Label();
             this.ViewPatientRadiologyGridView = new System.Windows.Forms.DataGridView();
             this.radiologyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +98,7 @@
             this.nameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -119,7 +121,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ViewPatientRadiologyGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientRadiologyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetViewPatientRadiology)).BeginInit();
@@ -751,6 +752,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "History Type";
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(7, 240);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(187, 36);
+            this.button11.TabIndex = 5;
+            this.button11.Text = "Print EMR Report";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(7, 198);
@@ -803,6 +814,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.groupBox6.Controls.Add(this.radioButtonDateAndTime);
             this.groupBox6.Controls.Add(this.radioButtonID);
             this.groupBox6.Controls.Add(this.radioButtonName);
@@ -852,6 +864,7 @@
             // 
             // PatientDetails
             // 
+            this.PatientDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.PatientDetails.Controls.Add(this.registedDate);
             this.PatientDetails.Controls.Add(this.label12);
             this.PatientDetails.Controls.Add(this.label11);
@@ -986,25 +999,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "First Name:";
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(7, 240);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(187, 36);
-            this.button11.TabIndex = 5;
-            this.button11.Text = "Print EMR Report";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // ViewPatientEMR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(932, 558);
             this.Controls.Add(this.PatientDetails);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewPatientEMR";
             this.Text = "EMR";
             this.Load += new System.EventHandler(this.ViewPatientEMR_Load);

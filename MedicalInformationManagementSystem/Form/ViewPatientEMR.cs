@@ -46,10 +46,19 @@ namespace MedicalInformationManagementSystem
             dtPatient = createGetPatient(dictionary);
             
             label11.Text=dtPatient.Rows[0][0].ToString();
-            registedDate.Text = dtPatient.Rows[0][1].ToString();
+
+            String regDate = dtPatient.Rows[0][1].ToString();
+            DateTime dte1 = Convert.ToDateTime(regDate);
+            registedDate.Text = dte1.Year.ToString() + "-" + dte1.Month + "-" + dte1.Day;
+            
             label5.Text = dtPatient.Rows[0][2].ToString();
             label4.Text = dtPatient.Rows[0][3].ToString();
-            label8.Text = dtPatient.Rows[0][4].ToString();
+
+            String sourceDateText = dtPatient.Rows[0][4].ToString();
+            DateTime dte = Convert.ToDateTime(sourceDateText);
+            sourceDateText = dte.Year.ToString() + "-" + dte.Month + "-" + dte.Day;
+
+            label8.Text = sourceDateText;
             label9.Text = dtPatient.Rows[0][5].ToString(); 
          
 

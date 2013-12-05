@@ -62,6 +62,21 @@ namespace MedicalInformationManagementSystem
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // this might be buggy
+            FormCollection FC = Application.OpenForms;
+            int i = 0;
+            while (FC.Count > 1)
+            {
+                if (FC[i].Name != "Front")
+                {
+                    FC[i].Dispose();
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
             user.Logout();
             setRole();
             Login();

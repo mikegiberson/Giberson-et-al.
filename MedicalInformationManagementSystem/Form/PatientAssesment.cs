@@ -50,10 +50,18 @@ namespace MedicalInformationManagementSystem
             dictionary = createGetPatientDictionary(PatientAssesmentPatientId);
             dtPatient = dc.getData("GetPatient", dictionary);
             label11.Text = dtPatient.Rows[0][0].ToString();
-            label13.Text = dtPatient.Rows[0][1].ToString();
+
+            String regDate = dtPatient.Rows[0][1].ToString();
+            DateTime dte1 = Convert.ToDateTime(regDate);
+            label13.Text = dte1.Year.ToString() + "-" + dte1.Month + "-" + dte1.Day;
+           
             label5.Text = dtPatient.Rows[0][2].ToString();
             label4.Text = dtPatient.Rows[0][3].ToString();
-            label8.Text = dtPatient.Rows[0][4].ToString();
+
+            String dob = dtPatient.Rows[0][4].ToString();
+            DateTime dte2 = Convert.ToDateTime(dob);
+            label8.Text = dte2.Year.ToString() + "-" + dte2.Month + "-" + dte2.Day;
+
             label9.Text = dtPatient.Rows[0][5].ToString();
             textBox1.Enabled = false;
             txt_cheifcomplaint.Enabled = false;

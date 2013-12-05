@@ -79,7 +79,7 @@ namespace MedicalInformationManagementSystem
 
                 if (result == DialogResult.OK)
                 {
-                    this.Hide();
+                    
                     CreateDemForm create = new CreateDemForm();
 
                     create.Show();
@@ -226,6 +226,13 @@ namespace MedicalInformationManagementSystem
                 s.doctorName = comboBox1.SelectedItem.ToString();
                 s.Show();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CreateDemForm create = new CreateDemForm();
+
+            create.Show();
         }
 
         

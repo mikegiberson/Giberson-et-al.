@@ -49,6 +49,13 @@ namespace MedicalInformationManagementSystem
             String DoctorName = cmbDoctor.Text;
             String ScheduleID = doctors.Rows[cmbDoctor.SelectedIndex]["scheduleID"].ToString();
 
+            addToSchedule(ScheduleID, DoctorID, DoctorName, Date, PatientID, LastName, FirstName);
+
+            this.Dispose();
+        }
+
+        public void addToSchedule(String ScheduleID, String DoctorID, String DoctorName, String Date, String PatientID, String LastName, String FirstName)
+        {
             Dictionary<String, String> param = new Dictionary<string, string>();
             param.Add("scheduleID", ScheduleID);
             param.Add("doctorID", DoctorID);
@@ -59,8 +66,6 @@ namespace MedicalInformationManagementSystem
             param.Add("firstName", FirstName);
             DatabaseConnector dconn = new DatabaseConnector();
             DataTable result = dconn.getData("addToSchedule", param);
-
-            this.Dispose();
         }
     }
 }

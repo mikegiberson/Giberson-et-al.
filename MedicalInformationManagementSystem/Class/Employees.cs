@@ -42,20 +42,43 @@ namespace MedicalInformationManagementSystem
         public void addEmployee(String UserName, String Password, String HireDate, String Role, String FirstName, String LastName, String DateOfBirth, String Gender)
         {
             // error checking needed
-            Password = Encrypt.MD5(Password);
+            if (String.IsNullOrEmpty(UserName))
+            {
+                throw new System.ArgumentNullException("User Name");
+            }
+            else if (String.IsNullOrEmpty(Password))
+            {
+                throw new System.ArgumentNullException("Password");
+            }
+            if (String.IsNullOrEmpty(Role))
+            {
+                throw new System.ArgumentNullException("Role");
+            }
+            else if (String.IsNullOrEmpty(FirstName))
+            {
+                throw new System.ArgumentNullException("First Name");
+            }
+            else if (String.IsNullOrEmpty(FirstName))
+            {
+                throw new System.ArgumentNullException("Last Name");
+            }
+            else
+            {
+                Password = Encrypt.MD5(Password);
 
-            Dictionary<String, String> param = new Dictionary<string, string>();
-            param.Add("userName", UserName);
-            param.Add("password", Password);
-            param.Add("hireDate", HireDate);
-            param.Add("role", Role);
-            param.Add("firstName", FirstName);
-            param.Add("lastName", LastName);
-            param.Add("dateOfBirth", DateOfBirth);
-            param.Add("gender", Gender);
+                Dictionary<String, String> param = new Dictionary<string, string>();
+                param.Add("userName", UserName);
+                param.Add("password", Password);
+                param.Add("hireDate", HireDate);
+                param.Add("role", Role);
+                param.Add("firstName", FirstName);
+                param.Add("lastName", LastName);
+                param.Add("dateOfBirth", DateOfBirth);
+                param.Add("gender", Gender);
 
-            DatabaseConnector dconn = new DatabaseConnector();
-            DataTable results = dconn.getData("addEmployee", param);
+                DatabaseConnector dconn = new DatabaseConnector();
+                DataTable results = dconn.getData("addEmployee", param);
+            }
         }
 
         public void editEmployee(String employeeID, String UserName, String Password, String Role, String FirstName, String LastName, String Gender)
@@ -64,6 +87,26 @@ namespace MedicalInformationManagementSystem
             if (String.IsNullOrEmpty(employeeID))
             {
                 throw new System.ArgumentNullException("employeeID");
+            }
+            else if (String.IsNullOrEmpty(UserName))
+            {
+                throw new System.ArgumentNullException("User Name");
+            }
+            else if (String.IsNullOrEmpty(Password))
+            {
+                throw new System.ArgumentNullException("Password");
+            }
+            if (String.IsNullOrEmpty(Role))
+            {
+                throw new System.ArgumentNullException("Role");
+            }
+            else if (String.IsNullOrEmpty(FirstName))
+            {
+                throw new System.ArgumentNullException("First Name");
+            }
+            else if (String.IsNullOrEmpty(FirstName))
+            {
+                throw new System.ArgumentNullException("Last Name");
             }
             else
             {

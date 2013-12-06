@@ -29,17 +29,27 @@ namespace MedicalInformationManagementSystem
             {
                 String UserName = txtUser.Text;
                 String Password = txtPass.Text;
-
-                user.Login(UserName, Password);
-                if (User.ID != null)
+                if (String.IsNullOrEmpty(UserName))
                 {
-                    front.setRole();
-                    this.Dispose();
+                    MessageBox.Show("User Name field left blank.");
+                }
+                else if (String.IsNullOrEmpty(Password))
+                {
+                    MessageBox.Show("Password field left blank.");
+                }
+                else
+                {
+                    user.Login(UserName, Password);
+                    if (User.ID != null)
+                    {
+                        front.setRole();
+                        this.Dispose();
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Incorrect credientials.");
             }
         }
     }

@@ -64,10 +64,10 @@ namespace MedicalInformationManagementSystem
 
             if (int.Parse(dtPatient.Rows[0][0].ToString()) > 0)
             {
-
                 ViewDemography cd = new ViewDemography();
                 cd.patientId = int.Parse(patientSearch.Text);
                 patientSearch.Clear();
+                cd.MdiParent = this.MdiParent;
                 cd.Show();
             }
             else
@@ -81,7 +81,7 @@ namespace MedicalInformationManagementSystem
                 {
                     
                     CreateDemForm create = new CreateDemForm();
-
+                    create.MdiParent = this.MdiParent;
                     create.Show();
                 }
             }
@@ -124,7 +124,8 @@ namespace MedicalInformationManagementSystem
             {
                 
                 ViewPatientEMR view = new ViewPatientEMR();
-                view.viewEMRPatientId = patientSearch.Text.ToString();          
+                view.viewEMRPatientId = patientSearch.Text.ToString();
+                view.MdiParent = this.MdiParent;
                 view.Show();
             }
             else
@@ -146,6 +147,7 @@ namespace MedicalInformationManagementSystem
             {
                 int checkPat = int.Parse(patientSearch.Text);
                 EmrReport repo = new EmrReport();
+                repo.MdiParent = this.MdiParent;
                 repo.patientId = checkPat;
                 repo.Show();
             }
@@ -191,6 +193,7 @@ namespace MedicalInformationManagementSystem
                 dtReport = createDailyReport(dictionary);
                 DailyPatientReports dailyReport = new DailyPatientReports();
                 dailyReport.myDate = todaysDate;
+                dailyReport.MdiParent = this.MdiParent;
                 dailyReport.Show();
 
             }
@@ -224,6 +227,7 @@ namespace MedicalInformationManagementSystem
                 ScheduleList s = new ScheduleList();
                 s.doctorID = this.doctorID;
                 s.doctorName = comboBox1.SelectedItem.ToString();
+                s.MdiParent = this.MdiParent;
                 s.Show();
             }
         }
@@ -231,6 +235,7 @@ namespace MedicalInformationManagementSystem
         private void button5_Click(object sender, EventArgs e)
         {
             CreateDemForm create = new CreateDemForm();
+            create.MdiParent = this.MdiParent;
 
             create.Show();
         }

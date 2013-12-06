@@ -691,6 +691,7 @@
             this.btnBookAppt.TabIndex = 34;
             this.btnBookAppt.Text = "Book Appointment";
             this.btnBookAppt.UseVisualStyleBackColor = true;
+            this.btnBookAppt.Click += new System.EventHandler(this.btnBookAppt_Click);
             // 
             // btnViewEMR
             // 

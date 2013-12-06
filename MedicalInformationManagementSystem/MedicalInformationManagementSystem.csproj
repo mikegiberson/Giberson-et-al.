@@ -154,11 +154,11 @@
     <Compile Include="Form\DailyPatientReports.designer.cs">
       <DependentUpon>DailyPatientReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\DoctorSchedule.cs">
+    <Compile Include="Form\ScheduleAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\DoctorSchedule.Designer.cs">
-      <DependentUpon>DoctorSchedule.cs</DependentUpon>
+    <Compile Include="Form\ScheduleAppointment.Designer.cs">
+      <DependentUpon>ScheduleAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\EditEmployee.cs">
       <SubType>Form</SubType>
@@ -227,12 +227,6 @@
     <Compile Include="Form\ViewPatientEMR.designer.cs">
       <DependentUpon>ViewPatientEMR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ManageStaff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\ManageStaff.Designer.cs">
-      <DependentUpon>ManageStaff.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form\AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,8 +239,8 @@
     <EmbeddedResource Include="Form\DailyPatientReports.resx">
       <DependentUpon>DailyPatientReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\DoctorSchedule.resx">
-      <DependentUpon>DoctorSchedule.cs</DependentUpon>
+    <EmbeddedResource Include="Form\ScheduleAppointment.resx">
+      <DependentUpon>ScheduleAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EditEmployee.resx">
       <DependentUpon>EditEmployee.cs</DependentUpon>
@@ -262,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ManageEmployees.resx">
       <DependentUpon>ManageEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\ManageStaff.resx">
-      <DependentUpon>ManageStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PatientAssesment.resx">
       <DependentUpon>PatientAssesment.cs</DependentUpon>

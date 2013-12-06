@@ -95,7 +95,6 @@ namespace MedicalInformationManagementSystem
             {
                 int a = 0;
                 return a;
-
             }
         }
 
@@ -111,12 +110,8 @@ namespace MedicalInformationManagementSystem
             {
                 int a = 0;
                 return a;
-
             }
         }
-
-
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -131,7 +126,6 @@ namespace MedicalInformationManagementSystem
         private void lblFirstName_TextChanged(object sender, EventArgs e)
         {
             //lblFirstName.Visible = true;
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -139,7 +133,7 @@ namespace MedicalInformationManagementSystem
 
             UpdatePatientDemography update = new UpdatePatientDemography();
             update.patientId = this.patientId;
-
+            update.MdiParent = this.MdiParent;
             update.Show();
         }
 
@@ -178,7 +172,6 @@ namespace MedicalInformationManagementSystem
             {
                 lblReferralDoctor.Text = dtReferenceDoctor.Rows[0][2].ToString();
                 lblBillingCode.Text = dtReferenceDoctor.Rows[0][1].ToString();
-
             }
 
             if (try2() != 0)
@@ -186,11 +179,9 @@ namespace MedicalInformationManagementSystem
 
                 lblAllergyName.Text = dtAllergy.Rows[0][1].ToString();
                 lblAllergyCategory.Text = dtAllergy.Rows[0][2].ToString();
-
             }
 
             lblInsNo.Text = dtInsurance.Rows[0][2].ToString() + " " + dtInsurance.Rows[0][3].ToString();
-
 
             string date = dtInsurance.Rows[0][4].ToString();
             DateTime edt = Convert.ToDateTime(date);
@@ -204,23 +195,18 @@ namespace MedicalInformationManagementSystem
                 lblCity.Text = dtPatientAddress.Rows[0][4].ToString();
                 lblProvince.Text = dtPatientAddress.Rows[0][5].ToString();
                 lblPostalCode.Text = dtPatientAddress.Rows[0][6].ToString();
-
-
             }
 
             if (try4() != 0)
             {
                 lblPhone.Text = dtPatientPhone.Rows[0][3].ToString();
                 lblPhoneType.Text = dtPatientPhone.Rows[0][2].ToString();
-
             }
-
 
             if (try5() != 0)
             {
                 lblEmailType.Text = dtPatientEmail.Rows[0][2].ToString();
                 lblEmail.Text = dtPatientEmail.Rows[0][3].ToString();
-
             }
 
         }
@@ -232,7 +218,7 @@ namespace MedicalInformationManagementSystem
 
             ViewPatientEMR view = new ViewPatientEMR();
             view.viewEMRPatientId = this.patientId.ToString();
-
+            view.MdiParent = this.MdiParent;
             view.Show();
 
         }
@@ -333,7 +319,15 @@ namespace MedicalInformationManagementSystem
         {
             AddtoDoctorList a = new AddtoDoctorList();
             a.patientID = this.patientId;
+            a.MdiParent = this.MdiParent;
             a.Show();
+        }
+
+        private void btnBookAppt_Click(object sender, EventArgs e)
+        {
+            ScheduleAppointment schedule = new ScheduleAppointment(lblPatientID.Text, lblFirstName.Text, lblLastName.Text);
+            schedule.MdiParent = this.MdiParent;
+            schedule.Show();
         }
 
 

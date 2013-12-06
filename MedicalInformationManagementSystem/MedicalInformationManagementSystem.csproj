@@ -11,6 +11,21 @@
     <AssemblyName>MIMS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,16 +53,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
-      <HintPath>.\itextsharp.dll</HintPath>
+      <HintPath>..\Assemblies\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp.pdfa">
-      <HintPath>.\itextsharp.pdfa.dll</HintPath>
+      <HintPath>..\Assemblies\itextsharp.pdfa.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp.xtra">
-      <HintPath>.\itextsharp.xtra.dll</HintPath>
+      <HintPath>..\Assemblies\itextsharp.xtra.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
@@ -69,12 +84,14 @@
     <Compile Include="Class\Allergy.cs" />
     <Compile Include="Class\Doctor.cs" />
     <Compile Include="Class\Email.cs" />
+    <Compile Include="Class\Employees.cs" />
     <Compile Include="Class\Encrypt.cs" />
     <Compile Include="Class\Insurance.cs" />
     <Compile Include="Class\Patient.cs" />
     <Compile Include="Class\PatientAllergy.cs" />
     <Compile Include="Class\Phone.cs" />
     <Compile Include="Class\ReferralDoctor.cs" />
+    <Compile Include="Class\User.cs" />
     <Compile Include="DataSet\DailyReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,22 +124,33 @@
     </Compile>
     <Compile Include="DataSet\DataSetViewPatientRadiology.cs">
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet\DataSetViewPatientRadiology.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViewPatientRadiology.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form\AddtoDoctorList.cs" />
+    <Compile Include="Form\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddEmployee.designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AddtoDoctorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\AddtoDoctorList.designer.cs">
       <DependentUpon>AddtoDoctorList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\CreateDemForm.cs" />
+    <Compile Include="Form\CreateDemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\CreateDemForm.designer.cs">
       <DependentUpon>CreateDemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\DailyPatientReports.cs" />
+    <Compile Include="Form\DailyPatientReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\DailyPatientReports.designer.cs">
       <DependentUpon>DailyPatientReports.cs</DependentUpon>
     </Compile>
@@ -132,57 +160,82 @@
     <Compile Include="Form\DoctorSchedule.Designer.cs">
       <DependentUpon>DoctorSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\EmrReport.cs" />
+    <Compile Include="Form\EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EditEmployee.designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\EmrReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\EmrReport.designer.cs">
       <DependentUpon>EmrReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Front.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Front.Designer.cs">
+    <Compile Include="Form\Front.designer.cs">
       <DependentUpon>Front.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Login.Designer.cs">
+    <Compile Include="Form\Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PatientAssesment.cs" />
+    <Compile Include="Form\ManageEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\ManageEmployees.designer.cs">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PatientAssesment.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\PatientAssesment.designer.cs">
       <DependentUpon>PatientAssesment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ScheduleList.cs" />
+    <Compile Include="Form\ScheduleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\ScheduleList.designer.cs">
       <DependentUpon>ScheduleList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\SearchPatient.cs" />
+    <Compile Include="Form\SearchPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\SearchPatient.designer.cs">
       <DependentUpon>SearchPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\UpdatePatientDemography.cs" />
+    <Compile Include="Form\UpdatePatientDemography.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\UpdatePatientDemography.designer.cs">
       <DependentUpon>UpdatePatientDemography.cs</DependentUpon>
     </Compile>
     <Compile Include="Database Connection\DatabaseConnector.cs" />
-    <Compile Include="Form\ViewDemography.cs" />
+    <Compile Include="Form\ViewDemography.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\ViewDemography.designer.cs">
       <DependentUpon>ViewDemography.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ViewPatientEMR.cs" />
+    <Compile Include="Form\ViewPatientEMR.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\ViewPatientEMR.designer.cs">
       <DependentUpon>ViewPatientEMR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\ManageStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\ManageStaff.Designer.cs">
       <DependentUpon>ManageStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\AddtoDoctorList.resx">
       <DependentUpon>AddtoDoctorList.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +248,9 @@
     <EmbeddedResource Include="Form\DoctorSchedule.resx">
       <DependentUpon>DoctorSchedule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\EmrReport.resx">
       <DependentUpon>EmrReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\ManageEmployees.resx">
+      <DependentUpon>ManageEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ManageStaff.resx">
       <DependentUpon>ManageStaff.cs</DependentUpon>
@@ -230,6 +289,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -325,9 +386,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

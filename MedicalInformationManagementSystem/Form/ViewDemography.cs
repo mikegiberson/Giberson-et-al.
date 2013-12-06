@@ -8,10 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HealthInformaticSystem;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using MIMS;
+
 
 namespace MedicalInformationManagementSystem
 {
@@ -169,7 +168,7 @@ namespace MedicalInformationManagementSystem
             lblFirstName.Text = dtPatient.Rows[0][3].ToString();
             string dob = dtPatient.Rows[0][4].ToString();
             DateTime dt = Convert.ToDateTime(dob);
-            dob = dt.Year.ToString() + "/" + dt.Month + "/" + dt.Day;
+            dob = dt.Year.ToString() + "-" + dt.Month + "-" + dt.Day;
             lblDOB.Text = dob;
             lblGender.Text = dtPatient.Rows[0][5].ToString();
             lblPatientID.Text = patientId.ToString();
@@ -195,7 +194,7 @@ namespace MedicalInformationManagementSystem
 
             string date = dtInsurance.Rows[0][4].ToString();
             DateTime edt = Convert.ToDateTime(date);
-            date = edt.Year.ToString() + "/" + edt.Month + "/" + edt.Day;
+            date = edt.Year.ToString() + "-" + edt.Month + "-" + edt.Day;
             lblExpDate.Text = date;
 
             if (try3() != 0)

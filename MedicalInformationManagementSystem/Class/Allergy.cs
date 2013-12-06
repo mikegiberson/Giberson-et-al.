@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalInformationManagementSystem.Class
+namespace MedicalInformationManagementSystem
 {
-    class Allergy
+    public class Allergy
     {
         private int _allergyId;
         private string _name;

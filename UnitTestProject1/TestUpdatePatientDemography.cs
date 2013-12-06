@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MedicalInformationManagementSystem;
-using MIMS;
-using MedicalInformationManagementSystem.Forms;
 using System.Windows.Input;
 using System.Data;
 using System.Collections.Generic;
@@ -22,7 +20,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestIsValidDateTimeTest()
         {
-            MIMS.UpdatePatientDemography upd = new UpdatePatientDemography();
+            UpdatePatientDemography upd = new UpdatePatientDemography();
             Assert.IsNotNull(upd);
             String testDate = "11/11/2011";
             bool check= upd.IsValidDateTimeTest(testDate);
@@ -32,7 +30,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void testcreateUpdatePatientDictionary()
         {
-            MIMS.UpdatePatientDemography upd = new UpdatePatientDemography();
+            UpdatePatientDemography upd = new UpdatePatientDemography();
             Assert.IsNotNull(upd);
             Dictionary<String, String> dic;
             String patid="1";
@@ -57,7 +55,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void testcreateUpdateInsuranceDictionary()
         {
-            MIMS.UpdatePatientDemography upd = new UpdatePatientDemography();
+            UpdatePatientDemography upd = new UpdatePatientDemography();
             Assert.IsNotNull(upd);
             Dictionary<String, String> dic;
             String a = "1";
@@ -82,7 +80,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void testcreateUpdatePatientPhoneDictionary()
         {
-            MIMS.UpdatePatientDemography upd = new UpdatePatientDemography();
+            UpdatePatientDemography upd = new UpdatePatientDemography();
             Assert.IsNotNull(upd);
             Dictionary<String, String> dic;
             String a = "1";
@@ -103,7 +101,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void testcreateUpdatePatientEmailDictionary()
         {
-            MIMS.UpdatePatientDemography upd = new UpdatePatientDemography();
+            UpdatePatientDemography upd = new UpdatePatientDemography();
             Assert.IsNotNull(upd);
             Dictionary<String, String> dic;
             String a = "1";
@@ -124,7 +122,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void testcreateUpdatePatientAddressDictionary()
         {
-            MIMS.UpdatePatientDemography upd = new UpdatePatientDemography();
+            UpdatePatientDemography upd = new UpdatePatientDemography();
             Assert.IsNotNull(upd);
             Dictionary<String, String> dic;
             String a = "1";

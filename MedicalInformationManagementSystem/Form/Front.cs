@@ -10,139 +10,114 @@ using System.Windows.Forms;
 
 namespace MedicalInformationManagementSystem
 {
-
     public partial class Front : Form
     {
-        private Login login;
-        private DoctorSchedule doctorSchedule;
-        private SearchPatient searchPatient;
-        private ManageStaff manageStaff;
-
-        public int employeeID;
-        public string userName;
-        public string role;
-
+        public User user;
+        public Login login;
+        public ManageEmployees manageEmployees;
+        public SearchPatient searchPatient;
+        
         public Front()
         {
             InitializeComponent();
-            Logout();
-        }
 
-        public void Login()
-        {
-            login.Hide();
-            login.Close();
-
-            loginToolStripMenuItem.Visible = false;
-            logoutToolStripMenuItem.Visible = true;
-
-            if (role == "Administrator")
-            {
-                manageStaffToolStripMenuItem.Visible = true;
-            }
-            else if (role == "Doctor")
-            {
-                doctorScheduleToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                searchPatientToolStripMenuItem.Visible = true;
-            }
-        }
-
-        public void Logout()
-        {
-            employeeID = 0;
-            userName = null;
-            role = null;
-
-            loginToolStripMenuItem.Visible = true;
-            manageStaffToolStripMenuItem.Visible = false;
-            doctorScheduleToolStripMenuItem.Visible = false;
-            searchPatientToolStripMenuItem.Visible = false;
-            logoutToolStripMenuItem.Visible = false;
-            
-            login = new Login(this);
-            login.MdiParent = this;
-            login.Show();
-        }
-
-        public void ManageStaff()
-        {
-            manageStaff = new ManageStaff();
-            manageStaff.MdiParent = this;
-            manageStaff.Show();
-        }
-
-        public void DoctorSchedule()
-        {
-            doctorSchedule = new DoctorSchedule();
-            doctorSchedule.MdiParent = this;
-            doctorSchedule.Show();
-        }
-
-        public void SearchPatient()
-        {
-            searchPatient = new SearchPatient();
-            searchPatient.MdiParent = this;
-            searchPatient.Show();
+            user = new User();
+            Login();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!login.IsDisposed)
-            {
-                login.Show();
-            }
-            else
-            {
-                Logout();
-            }
+            Login();
         }
 
-        private void mnuNav_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void administratorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (manageEmployees == null || manageEmployees.IsDisposed)
+            {
+                manageEmployees = new ManageEmployees();
+                manageEmployees.MdiParent = this;
+            }
+            manageEmployees.Show();
+        }
 
+        private void doctorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (searchPatient == null || searchPatient.IsDisposed)
+            {
+                searchPatient = new SearchPatient();
+                searchPatient.MdiParent = this;
+            }
+            searchPatient.Show();
+        }
+
+        private void staffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (searchPatient == null || searchPatient.IsDisposed)
+            {
+                searchPatient = new SearchPatient();
+                searchPatient.MdiParent = this;
+            }
+            searchPatient.Show();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Logout();
+            // this might be buggy
+            FormCollection FC = Application.OpenForms;
+            int i = 0;
+            while (FC.Count > 1)
+            {
+                if (FC[i].Name != "Front")
+                {
+                    FC[i].Dispose();
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            user.Logout();
+            setRole();
+            Login();
         }
 
-        private void doctorScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Login()
         {
-            if (!doctorSchedule.IsDisposed)
+            if (login == null || login.IsDisposed)
             {
-                doctorSchedule.Show();
+                login = new Login(this, user);
+                login.MdiParent = this;
+            }
+            login.Show();
+        }
+
+        public void setRole()
+        {
+            if (user.Role != null)
+            {
+                loginToolStripMenuItem.Visible = false; 
+                switch (user.Role)
+                {
+                    case 0:
+                        administratorToolStripMenuItem.Visible = true;
+                        break;
+                    case 1:
+                        doctorToolStripMenuItem.Visible = true;
+                        break;
+                    case 2:
+                        staffToolStripMenuItem.Visible = true;
+                        break;
+                }
+                logoutToolStripMenuItem.Visible = true;
             }
             else
             {
-                DoctorSchedule();
-            }
-        }
-
-        private void searchPatientToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!searchPatient.IsDisposed)
-            {
-                searchPatient.Show();
-            }
-            else
-            {
-                SearchPatient();
-            }
-        }
-
-        private void manageStaffToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!manageStaff.IsDisposed)
-            {
-                manageStaff.Show();
-            }
-            else
-            {
-                ManageStaff();
+                loginToolStripMenuItem.Visible = true;
+                administratorToolStripMenuItem.Visible = false;
+                doctorToolStripMenuItem.Visible = false;
+                staffToolStripMenuItem.Visible = false;
+                logoutToolStripMenuItem.Visible = false;
             }
         }
     }

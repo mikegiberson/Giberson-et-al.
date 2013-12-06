@@ -8,14 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using MedicalInformationManagementSystem;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using HealthInformaticSystem;
 
-
-
-namespace MIMS
+namespace MedicalInformationManagementSystem
 {
     public partial class UpdatePatientDemography : Form
     {
@@ -46,7 +42,7 @@ namespace MIMS
         }
         public bool IsValidDateTimeTest(string dateTime)
         {
-            string[] formats = { "MM/dd/yyyy" };
+            string[] formats = { "yyyy-MM-dd" };
             DateTime parsedDateTime;
             return DateTime.TryParseExact(dateTime, formats, new CultureInfo("en-US"),
                                            DateTimeStyles.None, out parsedDateTime);
@@ -214,7 +210,7 @@ namespace MIMS
             txtFname.Text = dtPatient.Rows[0][3].ToString();
             string sourceDateTex = dtPatient.Rows[0][4].ToString();
             DateTime dt = Convert.ToDateTime(sourceDateTex);
-            sourceDateTex = dt.Year.ToString() + "/" + dt.Month + "/" + dt.Day;
+            sourceDateTex = dt.Year.ToString() + "-" + dt.Month + "-" + dt.Day;
             patDob.Text = sourceDateTex;
             cmbGender.Text = dtPatient.Rows[0][5].ToString();
 
@@ -229,7 +225,7 @@ namespace MIMS
 
             string sourceDateText = dtInsurance.Rows[0][4].ToString(); 
             DateTime dte = Convert.ToDateTime(sourceDateText);
-            sourceDateText = dte.Year.ToString() + "/" + dte.Month + "/" + dte.Day;
+            sourceDateText = dte.Year.ToString() + "-" + dte.Month + "-" + dte.Day;
             txtExpDate.Text = sourceDateText;
           
 

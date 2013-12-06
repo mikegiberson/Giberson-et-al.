@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedicalInformationManagementSystem.Class
+namespace MedicalInformationManagementSystem
 {
-    class Phone
+    public class Phone
     {
         private int _patientID;
         private string _type;

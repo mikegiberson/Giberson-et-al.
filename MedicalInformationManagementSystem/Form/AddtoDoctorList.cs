@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HealthInformaticSystem
+namespace MedicalInformationManagementSystem
 {
     public partial class AddtoDoctorList : Form
     {
@@ -44,10 +44,18 @@ namespace HealthInformaticSystem
 
 
             lblPatientID.Text = dtPatient.Rows[0][0].ToString();
-            lblRegistedDate.Text = dtPatient.Rows[0][1].ToString();
+
+            String regDate = dtPatient.Rows[0][1].ToString();
+            DateTime dte1 = Convert.ToDateTime(regDate);
+            lblRegistedDate.Text = dte1.Year.ToString() + "-" + dte1.Month + "-" + dte1.Day;
+            
             lblLName.Text = dtPatient.Rows[0][2].ToString();
             lblFName.Text = dtPatient.Rows[0][3].ToString();
-            lblDOB.Text = dtPatient.Rows[0][4].ToString();
+
+            String dob  = dtPatient.Rows[0][4].ToString();
+            DateTime dte2 = Convert.ToDateTime(dob);
+            lblDOB.Text = dte2.Year.ToString() + "-" + dte2.Month + "-" + dte2.Day;
+           
             lblGender.Text = dtPatient.Rows[0][5].ToString();
 
             label1.Text = "Date: " + System.DateTime.Today.ToShortDateString();

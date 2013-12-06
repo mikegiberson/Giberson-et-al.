@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace MedicalInformationManagementSystem.DataSet {
+namespace HealthInformaticSystem.DataSet {
     
     
     /// <summary>
@@ -1556,7 +1556,7 @@ namespace MedicalInformationManagementSystem.DataSet {
         }
     }
 }
-namespace MedicalInformationManagementSystem.DataSet.DataSetPrintLatestEmrTableAdapters {
+namespace HealthInformaticSystem.DataSet.DataSetPrintLatestEmrTableAdapters {
     
     
     /// <summary>
@@ -1712,7 +1712,7 @@ namespace MedicalInformationManagementSystem.DataSet.DataSetPrintLatestEmrTableA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MedicalInformationManagementSystem.Properties.Settings.Default.GibersonConnectionString;
+            this._connection.ConnectionString = MedicalInformationManagementSystem.Properties.Settings.Default.GibersonConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

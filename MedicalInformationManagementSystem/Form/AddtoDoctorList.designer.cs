@@ -1,4 +1,4 @@
-﻿namespace HealthInformaticSystem
+﻿namespace MedicalInformationManagementSystem
 {
     partial class AddtoDoctorList
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddtoDoctorList));
             this.PatientDetails = new System.Windows.Forms.GroupBox();
             this.lblRegistedDate = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             // 
             // PatientDetails
             // 
+            this.PatientDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.PatientDetails.Controls.Add(this.lblRegistedDate);
             this.PatientDetails.Controls.Add(this.label12);
             this.PatientDetails.Controls.Add(this.lblPatientID);
@@ -64,7 +66,7 @@
             this.PatientDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PatientDetails.Location = new System.Drawing.Point(12, 12);
             this.PatientDetails.Name = "PatientDetails";
-            this.PatientDetails.Size = new System.Drawing.Size(805, 72);
+            this.PatientDetails.Size = new System.Drawing.Size(827, 72);
             this.PatientDetails.TabIndex = 5;
             this.PatientDetails.TabStop = false;
             this.PatientDetails.Text = "Patient Demography";
@@ -193,9 +195,10 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(436, 102);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "Add to List";
             this.button1.UseVisualStyleBackColor = true;
@@ -204,10 +207,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(107, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 18);
+            this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 9;
             this.label1.Text = "label1";
             // 
@@ -215,11 +218,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 191);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(851, 191);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.PatientDetails);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddtoDoctorList";
             this.Text = "AddtoDoctorList";
             this.Load += new System.EventHandler(this.AddtoDoctorList_Load);

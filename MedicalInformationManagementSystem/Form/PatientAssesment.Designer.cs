@@ -1,5 +1,4 @@
-﻿using HealthInformaticSystem.DataSet;
-namespace MedicalInformationManagementSystem.Forms
+﻿namespace MedicalInformationManagementSystem
 {
     partial class PatientAssesment
     {
@@ -30,6 +29,7 @@ namespace MedicalInformationManagementSystem.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientAssesment));
             this.PatientDetails = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -84,6 +84,7 @@ namespace MedicalInformationManagementSystem.Forms
             // 
             // PatientDetails
             // 
+            this.PatientDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.PatientDetails.Controls.Add(this.label13);
             this.PatientDetails.Controls.Add(this.label12);
             this.PatientDetails.Controls.Add(this.label11);
@@ -230,6 +231,7 @@ namespace MedicalInformationManagementSystem.Forms
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label16);
@@ -335,6 +337,7 @@ namespace MedicalInformationManagementSystem.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label20);
@@ -495,13 +498,15 @@ namespace MedicalInformationManagementSystem.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 456);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(943, 456);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PatientDetails);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PatientAssesment";
             this.Text = "Patient Assesment";
             this.Load += new System.EventHandler(this.PatientAssesment_Load);
@@ -554,7 +559,7 @@ namespace MedicalInformationManagementSystem.Forms
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cmbEMRDates;
         private System.Windows.Forms.BindingSource getPatientEMRDatesBindingSource;
-        private DataSetGetEMRDatesIntoComboBox dataSetGetEMRDatesIntoComboBox;
+        private HealthInformaticSystem.DataSet.DataSetGetEMRDatesIntoComboBox dataSetGetEMRDatesIntoComboBox;
         private HealthInformaticSystem.DataSet.DataSetGetEMRDatesIntoComboBoxTableAdapters.GetPatientEMRDatesTableAdapter getPatientEMRDatesTableAdapter;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
@@ -565,6 +570,6 @@ namespace MedicalInformationManagementSystem.Forms
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private DataSetPrintLatestEmr dataSetPrintLatestEmr1;
+        private HealthInformaticSystem.DataSet.DataSetPrintLatestEmr dataSetPrintLatestEmr1;
     }
 }

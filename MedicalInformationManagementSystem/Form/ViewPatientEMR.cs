@@ -7,22 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HealthInformaticSystem;
-using HealthInformaticSystem.DataSet;
-using MedicalInformationManagementSystem.Forms;
-
 
 namespace MedicalInformationManagementSystem
 {
     public partial class ViewPatientEMR : Form
-    {
-       
+    {       
         public String viewEMRPatientId;
         public int patId ;
         public Int16 sortby = 1;
         DataTable dtPatient = null;
         Dictionary<String, String> dictionary = null;
         DatabaseConnector dc = null;
+
         public ViewPatientEMR()
         {
             InitializeComponent();
@@ -50,10 +46,19 @@ namespace MedicalInformationManagementSystem
             dtPatient = createGetPatient(dictionary);
             
             label11.Text=dtPatient.Rows[0][0].ToString();
-            registedDate.Text = dtPatient.Rows[0][1].ToString();
+
+            String regDate = dtPatient.Rows[0][1].ToString();
+            DateTime dte1 = Convert.ToDateTime(regDate);
+            registedDate.Text = dte1.Year.ToString() + "-" + dte1.Month + "-" + dte1.Day;
+            
             label5.Text = dtPatient.Rows[0][2].ToString();
             label4.Text = dtPatient.Rows[0][3].ToString();
-            label8.Text = dtPatient.Rows[0][4].ToString();
+
+            String sourceDateText = dtPatient.Rows[0][4].ToString();
+            DateTime dte = Convert.ToDateTime(sourceDateText);
+            sourceDateText = dte.Year.ToString() + "-" + dte.Month + "-" + dte.Day;
+
+            label8.Text = sourceDateText;
             label9.Text = dtPatient.Rows[0][5].ToString(); 
          
 
@@ -74,7 +79,7 @@ namespace MedicalInformationManagementSystem
        
         private void button5_Click(object sender, EventArgs e)
         {
-           MedicalInformationManagementSystem.Forms.PatientAssesment h=new MedicalInformationManagementSystem.Forms.PatientAssesment();
+           PatientAssesment h = new PatientAssesment();
            h.PatientAssesmentPatientId = viewEMRPatientId;
            h.Show();
           

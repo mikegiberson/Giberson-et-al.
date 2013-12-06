@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MedicalInformationManagementSystem;
-using MIMS;
-using MedicalInformationManagementSystem.Forms;
 using System.Windows.Input;
 using System.Data;
 using System.Collections.Generic;
@@ -22,14 +20,14 @@ namespace UnitTestProject1.TestResults
         [TestMethod]
         public void TestMethod1()
         {
-            HealthInformaticSystem.AddtoDoctorList a = new HealthInformaticSystem.AddtoDoctorList();
+            AddtoDoctorList a = new AddtoDoctorList();
             Assert.IsNotNull(a);
         }
 
         [TestMethod]
         public void TestCreatePatientDictionary()
         {
-            HealthInformaticSystem.AddtoDoctorList a = new HealthInformaticSystem.AddtoDoctorList();
+            AddtoDoctorList a = new AddtoDoctorList();
             Assert.IsNotNull(a);
             Dictionary<String, String> dic;
             String patientID = "1";
@@ -42,7 +40,7 @@ namespace UnitTestProject1.TestResults
         [TestMethod]
         public void TestCreateDoctorNameDictionary()
         {
-            HealthInformaticSystem.AddtoDoctorList a = new HealthInformaticSystem.AddtoDoctorList();
+            AddtoDoctorList a = new AddtoDoctorList();
             Assert.IsNotNull(a);
             Dictionary<String, String> dic;
             String date = "12/1/2013";
@@ -56,7 +54,7 @@ namespace UnitTestProject1.TestResults
         [TestMethod]
         public void TestCreateScheduleDictionary()
         {
-            HealthInformaticSystem.AddtoDoctorList a = new HealthInformaticSystem.AddtoDoctorList();
+            AddtoDoctorList a = new AddtoDoctorList();
             Assert.IsNotNull(a);
             Dictionary<String, String> dic;
             String doctorID = "1";
@@ -72,7 +70,7 @@ namespace UnitTestProject1.TestResults
         [TestMethod]
         public void TestCreateDoctorIDDictionary()
         {
-            HealthInformaticSystem.AddtoDoctorList a = new HealthInformaticSystem.AddtoDoctorList();
+            AddtoDoctorList a = new AddtoDoctorList();
             Assert.IsNotNull(a);
             Dictionary<String, String> dic;
             String name = "John Smith";
@@ -85,7 +83,7 @@ namespace UnitTestProject1.TestResults
         [TestMethod]
         public void TestCreateDayScheduleDictionary()
         {
-            HealthInformaticSystem.AddtoDoctorList a = new HealthInformaticSystem.AddtoDoctorList();
+            AddtoDoctorList a = new AddtoDoctorList();
             Assert.IsNotNull(a);
             Dictionary<String, String> dic;
             //string scheduleID, String date, String doctorID, String doctorName, String patientID, string lastName, string firstName

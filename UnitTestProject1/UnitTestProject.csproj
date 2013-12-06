@@ -67,8 +67,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="EmployeeTest.cs" />
-    <Compile Include="LoginTest.cs" />
+    <Compile Include="TestEmployee.cs" />
+    <Compile Include="TestLogin.cs" />
     <Compile Include="TestAddDoctorList.cs" />
     <Compile Include="TestCreateDemForm.cs" />
     <Compile Include="TestPatientAssesment.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="TestUpdatePatientDemography.cs" />
     <Compile Include="TestViewDemography.cs" />
     <Compile Include="TestViewPatientEmr.cs" />
+    <Compile Include="TestScheduleAppointment.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MedicalInformationManagementSystem\MedicalInformationManagementSystem.csproj">

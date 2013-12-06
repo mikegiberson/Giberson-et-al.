@@ -137,7 +137,6 @@ namespace MedicalInformationManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             dictionary = createCheckPatientExistsDictionary(_mySearchId);
 
             dc = new DatabaseConnector();
@@ -155,16 +154,14 @@ namespace MedicalInformationManagementSystem
             {
                 MessageBox.Show("Patient does not exist.");
             }
-            
-           
         }
 
 
         //Include it whenever using this calendar to any other form
-        public Dictionary<String, String> createCheckDailyReortExistsDictionary(String selectedDate)
+        public Dictionary<String, String> createCheckDailyReportExistsDictionary(String selectedDate)
         {
             Dictionary<String, String> dic = new Dictionary<string, string>();
-            dic.Add("@patientId", selectedDate);
+            dic.Add("@myDate", selectedDate); //patientId
             return dic;
         }
         public Dictionary<String, String> createDailyReportDictionary(String selectedDate)
@@ -183,7 +180,7 @@ namespace MedicalInformationManagementSystem
         private void button3_Click(object sender, EventArgs e)
         {
             String todaysDate = dateTimePicker1.Text.ToString();
-            dictionary = createCheckDailyReortExistsDictionary(todaysDate);
+            dictionary = createCheckDailyReportExistsDictionary(todaysDate);
             dc = new DatabaseConnector();
             dtReport = checkDailyReportExists(dictionary);
             if (int.Parse(dtReport.Rows[0][0].ToString()) > 0)
@@ -195,27 +192,19 @@ namespace MedicalInformationManagementSystem
                 dailyReport.myDate = todaysDate;
                 dailyReport.MdiParent = this.MdiParent;
                 dailyReport.Show();
-
             }
             else
             {
                 MessageBox.Show("No Patient was treated on " + todaysDate + "\n Report do not exist!");
             }
             
-          
-            
-          
         }
-
- 
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             if (comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("No doctor has been selected");
-                
             }
             else
             {
@@ -236,10 +225,7 @@ namespace MedicalInformationManagementSystem
         {
             CreateDemForm create = new CreateDemForm();
             create.MdiParent = this.MdiParent;
-
             create.Show();
         }
-
-        
     }
 }

@@ -26,7 +26,7 @@ namespace MedicalInformationManagementSystem.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=pr-a315-24\\;Initial Catalog=Giberson;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SUNNY-ZETA;Initial Catalog=Giberson;Integrated Security=True")]
         public string GibersonConnectionString {
             get {
                 return ((string)(this["GibersonConnectionString"]));

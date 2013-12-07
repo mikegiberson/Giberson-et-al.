@@ -179,20 +179,6 @@ namespace MedicalInformationManagementSystem
             er.Show();
         }
 
-        private void button13_Click(object sender, EventArgs e)
-        {
-            EnterAssesment a = new EnterAssesment();
-            a.patId = this.patId;
-            a.Show();
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            EnterDaignosis a = new EnterDaignosis();
-            a.patId = this.patId;
-            a.Show();
-        }
-
        
     }
 }

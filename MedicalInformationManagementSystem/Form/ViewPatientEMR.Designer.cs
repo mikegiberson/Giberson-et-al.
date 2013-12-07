@@ -121,9 +121,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ViewPatientRadiologyGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getPatientRadiologyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetViewPatientRadiology)).BeginInit();
@@ -147,7 +144,6 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.PatientDetails.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -1003,45 +999,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "First Name:";
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.button13);
-            this.groupBox7.Controls.Add(this.button15);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(285, 554);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(404, 97);
-            this.groupBox7.TabIndex = 5;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Append ";
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(6, 36);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(187, 36);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "Enter Assesment";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(199, 36);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(188, 36);
-            this.button15.TabIndex = 2;
-            this.button15.Text = "Enter Diagnosis";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
             // ViewPatientEMR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(932, 669);
-            this.Controls.Add(this.groupBox7);
+            this.ClientSize = new System.Drawing.Size(932, 558);
             this.Controls.Add(this.PatientDetails);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -1076,7 +1039,6 @@
             this.groupBox6.PerformLayout();
             this.PatientDetails.ResumeLayout(false);
             this.PatientDetails.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1190,8 +1152,5 @@
         private System.Windows.Forms.Label registedDate;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button15;
     }
 }

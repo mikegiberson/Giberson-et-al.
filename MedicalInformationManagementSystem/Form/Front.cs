@@ -16,7 +16,6 @@ namespace MedicalInformationManagementSystem
         public Login login;
         public ManageEmployees manageEmployees;
         public SearchPatient searchPatient;
-        public PatientSearch patientSearch;
         
         public Front()
         {
@@ -43,22 +42,22 @@ namespace MedicalInformationManagementSystem
 
         private void doctorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (patientSearch == null || patientSearch.IsDisposed)
+            if (searchPatient == null || searchPatient.IsDisposed)
             {
-                patientSearch = new PatientSearch();
-                patientSearch.MdiParent = this;
+                searchPatient = new SearchPatient();
+                searchPatient.MdiParent = this;
             }
-            patientSearch.Show();
+            searchPatient.Show();
         }
 
         private void staffToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (patientSearch == null || patientSearch.IsDisposed)
+            if (searchPatient == null || searchPatient.IsDisposed)
             {
-                patientSearch = new PatientSearch();
-                patientSearch.MdiParent = this;
+                searchPatient = new SearchPatient();
+                searchPatient.MdiParent = this;
             }
-            patientSearch.Show();
+            searchPatient.Show();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)

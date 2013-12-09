@@ -16,8 +16,8 @@ namespace MedicalInformationManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new SearchPatient());
-            Application.Run(new Front());
+           // Application.Run(new EnterAssesment());
+           Application.Run(new Front());
         }
     }
 }

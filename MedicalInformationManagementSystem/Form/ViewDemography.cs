@@ -247,10 +247,10 @@ namespace MedicalInformationManagementSystem
             doc.Open();
             doc.Add(paragraph);
 
-            iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance("health-care-shield-icon.png");
-            png.ScalePercent(20f);
-            png.SetAbsolutePosition(doc.PageSize.Width - 17f - 50f, doc.PageSize.Height - 38f - 38f);
-            doc.Add(png);
+            //iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance("health-care-shield-icon.png");
+            //png.ScalePercent(20f);
+            //png.SetAbsolutePosition(doc.PageSize.Width - 17f - 50f, doc.PageSize.Height - 38f - 38f);
+            //doc.Add(png);
 
             doc.Close();
 
@@ -283,9 +283,9 @@ namespace MedicalInformationManagementSystem
             paragraph3.IndentationLeft = 460;
             paragraph3.SpacingBefore = -67;
 
-            iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance("health-care-shield-icon.png");
-            png.ScalePercent(15f);
-            png.SetAbsolutePosition(doc.PageSize.Width - 26f - 50f, doc.PageSize.Height - 40f - 40f);
+            //iTextSharp.text.Image png = iTextSharp.text.Image.GetInstance("health-care-shield-icon.png");
+            //png.ScalePercent(15f);
+            //png.SetAbsolutePosition(doc.PageSize.Width - 26f - 50f, doc.PageSize.Height - 40f - 40f);
 
             string par4 = "DOCTOR'S NOTE";
             Paragraph paragraph4 = new Paragraph(par4, times1);
@@ -296,7 +296,7 @@ namespace MedicalInformationManagementSystem
             doc.Add(paragraph1);
             doc.Add(paragraph2);
             doc.Add(paragraph3);
-            doc.Add(png);
+          //  doc.Add(png);
             doc.Add(paragraph4);
 
             PdfContentByte cb = wri.DirectContent;

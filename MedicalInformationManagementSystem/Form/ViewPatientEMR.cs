@@ -175,8 +175,25 @@ namespace MedicalInformationManagementSystem
         private void button11_Click(object sender, EventArgs e)
         {
             EmrReport er = new EmrReport();
+            er.MdiParent = this.MdiParent;
             er.patientId = patId;
             er.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            EnterAssesment a = new EnterAssesment();
+            a.MdiParent = this.MdiParent;
+            a.patId = this.patId;
+            a.Show();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            EnterDaignosis a = new EnterDaignosis();
+            a.MdiParent = this.MdiParent;
+            a.patId = this.patId;
+            a.Show();
         }
 
        

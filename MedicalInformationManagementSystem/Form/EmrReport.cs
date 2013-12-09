@@ -20,7 +20,6 @@ namespace MedicalInformationManagementSystem
 
         private void EmrReport_Load(object sender, EventArgs e)
         {
-            dataSetPrintLatestEmr.EnforceConstraints = false;
             this.getPatientLatestEmrReportTableAdapter.Fill(dataSetPrintLatestEmr.GetPatientLatestEmrReport, patientId);
             this.reportViewer1.RefreshReport();
            // this.reportViewer2.RefreshReport();

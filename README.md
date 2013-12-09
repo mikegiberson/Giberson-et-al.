@@ -1,5 +1,11 @@
 Giberson-et-al.
+
 ===============
 
-Testing for Continuous Delivery with Visual Studio 2012:<br/>
-http://www.microsoft.com/en-ca/download/details.aspx?id=35380
+
+
+Adminstration Guide:<br/>
+Documentation\Administrator Guide\AdministratorGuide.docx
+
+
+DO NOT ATTEMPT TO RUN ON DISK
